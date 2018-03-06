@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-// CSS Reset
+/* // CSS Reset
  @import "base/reset.scss";
 
  // Core
@@ -25,4 +25,4 @@
  @import "base/grid.scss";
 
  // Components
- @import "components/*";
+ @import "components/*"; */
