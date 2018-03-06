@@ -39,29 +39,33 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to TheRule!
+          <p className="welcome-message">Welcome to TheRule!</p>
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Username:
+            <label>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="Username"
               />
             </label>
             <br/>
-            <label>Password:
+            <label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="Password"
               />
             </label>
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
+            <p className="tag-after-button">
+              Please {this.props.formType} or {this.props.navLink}
+            </p>
           </div>
         </form>
       </div>

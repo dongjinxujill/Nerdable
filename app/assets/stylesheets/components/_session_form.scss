@@ -1,0 +1,71 @@
+body {
+  font-family: Helvetica;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form-container{
+  background-image: url('/assets/session_form_background.jpg');
+  position:relative;
+  overflow-y:auto;
+  height: 845px;
+  color: white;
+}
+
+.login-form-box{
+  width: 360px;
+  margin-left: 50px;
+  postion: relative;
+  display: block;
+  height: 845px;
+  margin-top: 50px;
+}
+
+.login-form{
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.login-input{
+  font-size: 16px;
+  line-height: 20px;
+  height: auto;
+  padding: 9px 11px;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 80%;
+  background: white;
+  text-align: left;
+}
+
+.session-submit{
+  width: 80%;
+  border: 1px solid orange;
+  border-radius: 5px;
+  height: auto;
+  line-height: 20px;
+  padding: 9px 11px;
+  text-align: center;
+  color: white;
+  background-color: orange;
+  margin-bottom: 20px;
+}
+
+.welcome-message{
+  font-weight: 700;
+  font-size: 30px;
+  color: orange;
+}
+
+.tag-after-button {
+  text-align: center;
+
+}
