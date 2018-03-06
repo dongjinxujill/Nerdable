@@ -8,6 +8,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+import Footer from './footer/footer';
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
@@ -27,6 +28,9 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/demologin" component={DemoLoginFormContainer} />
     </Switch>
+    <footer>
+      <Footer />
+    </footer>
   </div>
 );
 
