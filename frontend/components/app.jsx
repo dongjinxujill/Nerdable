@@ -18,7 +18,7 @@ const App = () => (
   <div>
     <header className="header-nav">
       <Link to="/" className="header-link">
-        <img src={'../app/assets/images/logo.jpg'}/>
+        <img src="/assets/logo.jpg"/>
       </Link>
       <GreetingContainer />
     </header>

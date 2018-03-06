@@ -1,8 +1,10 @@
 .header-nav{
   position: relative;
-  height: 78px;
+  height: 68px;
   background-color: #eee;
   border-bottom: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .main-title {
@@ -10,8 +12,15 @@
   padding: 20px;
 }
 
+.header-link {
+  padding: 0;
+  height: auto;
+  width: 100px;
+  background-color: gray;
+}
 .login-signup {
   color: gray;
   position: relative;
   top: 28px;
+  font-size: 12px;
 }
