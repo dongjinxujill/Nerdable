@@ -3,6 +3,7 @@
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
   <% end %>
+  window.session_form_background="<%= asset_path('session_form_background.jpg')%>"
 </script>
 
 <main id="root">

@@ -18,7 +18,7 @@ const App = () => (
   <div>
     <header className="header-nav">
       <Link to="/" className="header-link">
-        <img src="/assets/logo.jpg"/>
+        <img src={window.session_form_background}/>
       </Link>
       <GreetingContainer />
     </header>
