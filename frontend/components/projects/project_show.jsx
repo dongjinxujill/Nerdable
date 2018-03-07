@@ -20,13 +20,11 @@ class ProjectShow extends React.Component {
       return <div>Loading...</div>;
     }
     return (
-      <div>
-        <h3>{project.title}</h3>
-        <p>by {this.props.authors[project.author_id].username}</p>
-        <p>Posted: {project.createdAt}</p>
-        <p>{project.body}</p>
-
-        <Link to="/">Back to Index</Link>
+      <div className="project-show">
+        <h1 className="project-show-title">{project.title}</h1>
+        <p className="project-show-author">by {this.props.authors[project.author_id].username}</p>
+        <p className="project-show-date">Posted: {project.createdAt}</p>
+        <p className="project-show-body">{project.body}</p>
       </div>
     );
   }

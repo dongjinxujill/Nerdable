@@ -57,3 +57,38 @@
   padding: 5px;
   color: gray;
 }
+
+.project-show{
+}
+
+.project-show-title{
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.project-show-author{
+  text-align: center;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 32px;
+}
+
+.project-show-date{
+  text-align: right;
+  line-height: 52px;
+  margin-right: 100px;
+  color: #999;
+}
+
+.project-show-body{
+  text-align: left;
+  margin: 0 100px 100px 100px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 300;
+  color: #555;
+  word-wrap: break-word;
+}
