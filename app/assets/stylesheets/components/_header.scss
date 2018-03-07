@@ -38,14 +38,16 @@
 
 .header-group {
   color: gray;
-  position: relative;
-  top: 20px;
+  text-align: center;
 }
 
 .header-name {
-	text-align: left;
+
 }
 
+.header-button {
+  font-size: 12px;
+}
 .header-button:hover{
   background-color: orange;
   cursor: pointer;
