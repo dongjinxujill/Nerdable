@@ -16,5 +16,5 @@
 
  @import "base/reset.scss";
  @import "base/layout.scss";
- @import "components/_app.scss";
+ @import "components/_header.scss";
  @import "components/_session_form.scss";

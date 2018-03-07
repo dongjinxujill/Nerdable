@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Footer = (props) => {
-  return {
-    <a href="https://github.com/dongjinxujill"></a>;
-  };
+  return <h1>footer</h1>;
 };
 
 export default Footer;
