@@ -9,7 +9,9 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
+
 
   update(field) {
     return e => this.setState({
@@ -17,11 +19,25 @@ class SessionForm extends React.Component {
     });
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    const demo = {username: 'demologin', password: 'demologin'};
+    this.setState(demo);
+    setTimeout(() => {
+      this.props.processForm(demo).then(() => {
+        this.props.history.push('/');
+      });
+    }, 3000);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(()=>{
+      this.props.history.push('/');
+    });
   }
+
 
   renderErrors() {
     return(
@@ -63,6 +79,7 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="demo-login" type="submit" onClick={this.demoLogin} value="Demo Login"/>
             <p className="tag-after-button">
               Please {this.props.formType} or {this.props.navLink}
             </p>

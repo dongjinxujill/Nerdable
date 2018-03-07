@@ -22,7 +22,11 @@ users = User.create([
   {
     username: 'hulamadx',
     password: 'hulamadx'
-  }]);
+  },
+  {
+    username: 'demoLogin',
+    password: 'demologin'
+  }])
 
 
 
@@ -42,4 +46,4 @@ projects = Project.create([
     title: "Curabitur commodo",
     body: "Nunc sit amet finibus purus. Duis semper elit in risus finibus vehicula. Quisque accumsan finibus vehicula. Aenean tortor mauris, pharetra non dui lobortis, rhoncus pulvinar sem.",
     author_id: users.sample.id
-  }]);
+  }])
