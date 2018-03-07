@@ -7,8 +7,8 @@ const ProjectsIndexItem = ({ project, username }) => {
     <li className="project-main-page">
       <Link to={`/projects/${project.id}`}>
         <li className="project-title">{project.title}</li>
-        <li className="project-author">By: {username}</li>
       </Link>
+      <li className="project-author">by {username}</li>
     </li>);
 };
 

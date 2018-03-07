@@ -20,6 +20,13 @@ class ProjectsIndex extends React.Component {
 
     return (
       <div className="projects-index">
+        <div className="container">
+          <form className="makeit-searchform">
+            <span className="title">Let's Make</span>
+            <div className="makeit-searchfield">potential search bar</div>
+            <a className="makeit-searchbutton"><img src={window.searchbutton}/></a>
+          </form>
+        </div>
         <ul className="project">
           {projects}
         </ul>
