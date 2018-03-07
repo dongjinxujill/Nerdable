@@ -18,11 +18,11 @@ class ProjectsIndex extends React.Component {
     });
 
     return (
-      <div className="projects-index">
+      <body className="projects-index">
         <ul className="project">
           {projects}
         </ul>
-      </div>
+      </body>
     );
   }
 }

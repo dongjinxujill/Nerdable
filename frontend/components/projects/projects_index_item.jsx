@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const ProjectsIndexItem = ({ project, deleteProject }) => {
   return (
-    <li>
+    <div className="project-main-page">
       <Link to={`/projects/${project.id}`}>
-        <li>{project.title}</li>
-        <li>{project.body}</li>
-        <li>{project.author_id}</li>
+        <li className="project-title">{project.title}</li>
+        <li className="project-body">{project.body}</li>
+        <li className="project-authorId">{project.author_id}</li>
       </Link>
-    </li>);
+    </div>);
 };
 
 export default ProjectsIndexItem;
