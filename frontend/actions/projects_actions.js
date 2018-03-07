@@ -4,14 +4,14 @@ export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 
-export const receiveAllProjects = projects => ({
+export const receiveAllProjects = payload => ({
   type: RECEIVE_ALL_PROJECTS,
-  projects
+  payload
 });
 
-export const receiveProject = project => ({
+export const receiveProject = payload => ({
   type: RECEIVE_PROJECT,
-  project
+  payload
 });
 
 export const removeProject = projectId => ({
@@ -20,15 +20,16 @@ export const removeProject = projectId => ({
 });
 
 export const fetchAllProjects = () => dispatch => (
-  ProjectsApiUtil.fetchAllProjects().then(projects => (
-    dispatch(receiveAllProjects(projects)))
+  ProjectsApiUtil.fetchAllProjects().then(payload => (
+    dispatch(receiveAllProjects(payload)))
   )
 );
 
 export const fetchProject = (id) => dispatch => (
-  ProjectsApiUtil.fetchProject(id).then(project => (
-    dispatch(receiveProject(project)))
-  )
+  ProjectsApiUtil.fetchProject(id).then(payload => {
+    dispatch(receiveProject(payload));
+    return payload.project;
+  })
 );
 
 export const createProject = (project) => dispatch => (

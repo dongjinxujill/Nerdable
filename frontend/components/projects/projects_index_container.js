@@ -3,14 +3,15 @@ import ProjectsIndex from './projects_index';
 import { fetchAllProjects, deleteProject } from '../../actions/projects_actions';
 
 const mapStateToProps = state => {
+  // debugger
   return {
-    projects: Object.values(state.entities.projects)
-  }
+    projects: Object.values(state.entities.projects),
+    users: state.entities.users
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllProjects: () => dispatch(fetchAllProjects()),
-  deleteProject: id => dispatch(deleteProject(id))
+  fetchAllProjects: () => dispatch(fetchAllProjects())
 });
 
 export default connect(

@@ -8,21 +8,22 @@ class ProjectsIndex extends React.Component {
   }
 
   render() {
+    // debugger
     const projects = this.props.projects.map(project => {
       return (
         <ProjectsIndexItem
           key={project.id}
           project={project}
-          deleteProject={this.props.deleteProject} />
+          username={this.props.users[project.author_id].username} />
       );
     });
 
     return (
-      <body className="projects-index">
+      <div className="projects-index">
         <ul className="project">
           {projects}
         </ul>
-      </body>
+      </div>
     );
   }
 }
