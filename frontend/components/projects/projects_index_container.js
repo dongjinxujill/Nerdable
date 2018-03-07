@@ -3,7 +3,6 @@ import ProjectsIndex from './projects_index';
 import { fetchAllProjects, deleteProject } from '../../actions/projects_actions';
 
 const mapStateToProps = state => {
-  // debugger
   return {
     projects: Object.values(state.entities.projects),
     users: state.entities.users
