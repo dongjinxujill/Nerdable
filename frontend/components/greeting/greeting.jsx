@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const sessionLinks = () => (
   <nav className="login-signup">
-    <Link to="/login">Log In</Link>
+    <Link to="/login" style={{ textDecoration: 'none' }}>Log In</Link>
     &nbsp;|&nbsp;
-    <Link to="/signup">Sign Up</Link>
+    <Link to="/signup" style={{ textDecoration: 'none' }}>Sign Up</Link>
   </nav>
 );
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
-    <h2 className="gear_dropdown">Hi, {currentUser.username}!</h2>
+    <h2 className="header-name">Hi, {currentUser.username}!</h2>
     <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>
 );

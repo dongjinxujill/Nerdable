@@ -16,22 +16,22 @@ import DemoLoginFormContainer from './session_form/demologin_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
-    <header className="header-nav">
-      <Link to="/" className="header-link">
-        <img src={window.logo}/>
-      </Link>
-      <GreetingContainer />
-    </header>
-    <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <AuthRoute exact path="/demologin" component={DemoLoginFormContainer} />
-    </Switch>
-    <footer>
-      <Footer />
-    </footer>
-  </div>
+  <React.Fragment>
+    <div>
+      <header className="header-nav">
+        <Link to="/" className="header-link">
+          <img src={window.logo} className="logo"/>
+        </Link>
+        <GreetingContainer />
+      </header>
+      <Switch>
+        <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <AuthRoute exact path="/demologin" component={DemoLoginFormContainer} />
+      </Switch>
+    </div>
+    <Footer />
+  </React.Fragment>
 );
 
 export default App;

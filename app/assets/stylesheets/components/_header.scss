@@ -1,10 +1,15 @@
 .header-nav{
   position: relative;
-  height: 68px;
   background-color: #eee;
   border-bottom: 1px solid #ddd;
-  padding: 10px;
   margin-bottom: 20px;
+  padding: 10px;
+}
+
+.logo {
+  height: 74px;
+  width: 250px;
+  // opacity: 0.9;
 }
 
 .main-title {
@@ -12,7 +17,6 @@
 }
 
 .header-link {
-  width: 100px;
   background-color: gray;
 }
 .login-signup {
@@ -21,7 +25,16 @@
   top: 28px;
   font-size: 12px;
 }
+.login:hover{
+  text-decoration: none;
+}
 
+.signp:hover{
+  text-decoration: none;
+}
+.login-signup:hover{
+  text-decoration: none;
+}
 
 .header-group {
   color: gray;
@@ -30,82 +43,12 @@
 }
 
 .header-name {
-  position: absolute;
-	top: 30px;
-	right: 0;
-	background-color: #fff;
-	border: 1px solid gray;
-	border-radius: 3px;
-	padding: 10px;
-	width: 225px;
-	z-index: 1;
 	text-align: left;
-	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
 }
 
 .header-button:hover{
   background-color: orange;
   cursor: pointer;
   border-radius: 2px;
-}
-
-.gear-dropdown {
-	position: absolute;
-	top: 30px;
-	right: 0;
-	background-color: #fff;
-	border: 1px solid gray;
-	border-radius: 3px;
-	padding: 10px;
-	width: 225px;
-	z-index: 1;
-	color: gray;
-	font-family: Helvetica;
-	text-align: left;
-	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
-	font-weight: initial;
-}
-
-.gear-dropdown .editions  {
-	border-bottom: 1px solid gray;
-}
-
-.gear-dropdown .editions li,
-.gear-dropdown .help li {
-	margin: 5px 0;
-	cursor: pointer;
-	border-radius: 3px;
-	font-size: 12px;
-}
-
-.gear-dropdown a {
-	display: block;
-	padding: 5px 5px;
-}
-
-.editions a {
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-.gear-dropdown .help li {
-	color: blue;
-}
-
-.gear-dropdown .editions li:hover {
-	background-color: gray;
-}
-
-.dropdown-subtitle {
-	text-transform: uppercase;
-	font-family: Helvetica;
-	font-size: 11px;
-	font-weight: bolder;
-	margin: 10px 5px;
-	display: block;
-}
-
-.editions li:first-of-type {
-	color: #000;
-	background-color: gray;
+  text-decoration: none;
 }

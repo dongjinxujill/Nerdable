@@ -1,0 +1,24 @@
+#footer-link {
+  font-size: 14px;
+  color: #999;
+  min-width: 1030px;
+  line-height:21px;
+  position:relative;
+  background: #eee;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.footer-github{
+  margin-bottom: 10px;
+}
+.footer-github a:hover{
+  text-decoration: none;
+}
+
+.footer-portfolio{
+  margin-bottom: 10px;
+
+}
