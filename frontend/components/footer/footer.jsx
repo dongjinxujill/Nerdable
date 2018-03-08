@@ -4,8 +4,8 @@ class Footer extends React.Component{
   render(){
     return (
       <ul id='footer-link'>
-        <li className='footer-github'><a href='https://github.com/dongjinxujill/TheRule'>Github</a></li>
-        <li className='footer-portfolio'>Portfolio</li>
+        <i className="fab fa-github-square"><a href='https://github.com/dongjinxujill/TheRule'></a></i>
+        <li className="copyright">© 2018 Dongjin Jill Xu</li>
       </ul>
     );
   }

@@ -15,15 +15,19 @@ class ProjectForm extends React.Component {
   }
 
   handleSubmit(e) {
+    const formData = new FormData();
+    formData.append("project[title]", this.state.title);
+    formData.append("project[body]", this.state.body);
+    formData.append("project[image]", this.state.imageFile);
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'));
+    this.props.action(formData).then(() => this.props.history.push('/'));
   }
 
   updateFile(e){
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function () {
-      this.setState({imageFile: file, imageUrl: fileReader.result})
+      this.setState({imageFile: file, imageUrl: fileReader.result});
     }.bind(this);
 
     if (file) {
@@ -34,23 +38,18 @@ class ProjectForm extends React.Component {
   render () {
     return (
       <div>
-        <h3>{this.props.formType}</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Title
+        <form className="create-project-form" onSubmit={this.handleSubmit}>
+          <input className="inputfile" name="file" id="file" type="file" onChange={this.updateFile.bind(this)}></input>
+          <label for="file"><i className="fas fa-plus"></i>Click To Add Images</label>
+          <input className="create-project-submit" type="submit" value='Publish' />
+          
+          <label className="create-project-title">Title
             <input
               type="text"
               value={this.state.title}
               onChange={this.update('title')} />
           </label>
-          <input type="file" onChange={this.updateFile}></input>
           <img src={this.state.imageUrl}/>
-          <label>
-            <textarea
-              value={this.state.body}
-              onChange={this.update('body')} />
-          </label>
-
-          <input type="submit" value={this.props.formType} />
         </form>
       </div>
     );

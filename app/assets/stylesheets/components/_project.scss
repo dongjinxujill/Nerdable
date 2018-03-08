@@ -1,4 +1,9 @@
+.main-main-div {
+  background-color: #d4e1e7;
+}
+
 .projects-index {
+  background: white;
 }
 
 .container{
@@ -8,7 +13,7 @@
   background-image: url('/assets/main-background.jpg');
   background-size: 1200px;
   opacity: 0.9;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .makeit-searchform{
@@ -38,6 +43,7 @@
 }
 .project {
   display: flex;
+  background: white;
   justify-content: space-around;
   margin-bottom: 20px;
 }
@@ -45,8 +51,16 @@
 .project-main-page{
   border: 1px solid #D3D3D3;
   box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+  text-align: center;
 
 }
+
+.project-image {
+  width: 324px;
+  border: 0;
+  vertical-align: baseline;
+}
+
 .project-title{
   padding: 5px;
   font-weight: 700;
@@ -90,4 +104,66 @@
   font-weight: 300;
   color: #555;
   word-wrap: break-word;
+}
+
+.create-project-form{
+  padding: 0;
+  margin-top: 40px;
+  position:relative;
+  width: 1016px;
+  background: #fff;
+  border: 1px solid rgba(119, 130, 135, 0.4);
+  color: #555;
+  border-radius: 8px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    color: #AAA;
+    display: inline-block;
+    cursor: pointer;
+    width: 98%;
+    font-size: 20px;
+    padding: 40px 0px 10px 0px;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    background-color: #eee;
+    margin-top: 10px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+    height: 50px;
+}
+
+.fa-search {
+}
+
+.create-project-submit{
+  display: block;
+  margin-left: 5px;
+  float: right;
+  background-color: #e86c00;
+  border-color: #cf6000;
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 12px;
+  margin:9px;
+}
+
+
+.create-project-title{
+  color: white;
 }

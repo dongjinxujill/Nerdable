@@ -1,5 +1,5 @@
 class Api::ProjectsController < ApplicationController
-  before_action :ensure_logged_in, only: [:create, :update, :destroy]
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def show
     @project = Project.find(params[:id])
@@ -47,6 +47,6 @@ class Api::ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :body)
+    params.require(:project).permit(:title, :body, :image)
   end
 end

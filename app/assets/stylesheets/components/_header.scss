@@ -57,10 +57,11 @@
 .header-group {
   color: gray;
   text-align: center;
+  margin-top:10px;
 }
 
 .header-name {
-
+  font-weight: 700;
 }
 
 .pipe{
@@ -69,6 +70,9 @@
 
 .header-button {
   font-size: 12px;
+  border: 2px solid orange;
+  border-radius: 2px;
+  background-color: orange;
 }
 .header-button:hover{
   background-color: orange;

@@ -3,20 +3,22 @@
   color: #999;
   min-width: 1030px;
   line-height:21px;
-  position: absolute;
   background: #eee;
   padding-top:15px;
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
-.footer-github{
+.fa-github-square{
   margin-bottom: 10px;
+  font-size: 40px;
 }
 .footer-github a:hover{
   text-decoration: none;
 }
 
-.footer-portfolio{
-  padding-bottom: 10px;
+.copyright{
+  margin-top: 7px;
 }
