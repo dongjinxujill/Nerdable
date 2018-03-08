@@ -19,6 +19,18 @@ class ProjectForm extends React.Component {
     this.props.action(this.state).then(() => this.props.history.push('/'));
   }
 
+  updateFile(e){
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({imageFile: file, imageUrl: fileReader.result})
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   render () {
     return (
       <div>
@@ -30,7 +42,8 @@ class ProjectForm extends React.Component {
               value={this.state.title}
               onChange={this.update('title')} />
           </label>
-
+          <input type="file" onChange={this.updateFile}></input>
+          <img src={this.state.imageUrl}/>
           <label>
             <textarea
               value={this.state.body}

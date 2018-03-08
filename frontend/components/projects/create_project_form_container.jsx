@@ -4,7 +4,7 @@ import ProjectForm from './project_form';
 import { createProject } from '../../actions/projects_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const project = { title: '', body: ''};
+  const project = { title: '', body: '', imageFile: null, imageUrl: null};
   const formType = 'Create Project';
   const currentUser = state.session.currentUser;
   return { project, formType, currentUser };

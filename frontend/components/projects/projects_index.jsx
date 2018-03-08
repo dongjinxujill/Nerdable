@@ -14,7 +14,8 @@ class ProjectsIndex extends React.Component {
         <ProjectsIndexItem
           key={project.id}
           project={project}
-          username={this.props.users[project.author_id].username} />
+          username={this.props.users[project.author_id].username}
+          />
       );
     });
 

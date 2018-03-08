@@ -25,7 +25,7 @@ const App = () => (
         <Link to="/" className="header-link">
           <p className="logo">TheRule</p>
         </Link>
-        <li className="li-project-button"><Link to="/projects/new" className="write-project-button" component={ProjectForm}>Write a Project</Link></li>
+        <li className="li-project-button">Write a Project</li>
         <GreetingContainer />
       </header>
       <Switch>

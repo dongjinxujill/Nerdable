@@ -8,11 +8,11 @@ class ProjectShow extends React.Component {
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.projectId !== nextProps.match.params.projectId) {
-  //     this.props.fetchProject(nextProps.match.params.projectId);
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.projectId !== nextProps.match.params.projectId) {
+      this.props.fetchProject(nextProps.match.params.projectId);
+    }
+  }
 
   render() {
     const { project } = this.props;
