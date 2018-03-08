@@ -1,5 +1,5 @@
 class Step < ApplicationRecord
-  validates :title, :project_id, :body, presence: true
+  validates :project_id, :step_number, presence: true
 
   belongs_to :project,
   class_name: :Project,

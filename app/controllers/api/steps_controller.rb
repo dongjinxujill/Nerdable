@@ -46,6 +46,6 @@ class Api::StepsController < ApplicationController
 
   private
   def step_params
-    params.require(:step).permit(:title, :body, :image, :project_id)
+    params.require(:step).permit(:title, :body, :step_number, :image, :project_id)
   end
 end
