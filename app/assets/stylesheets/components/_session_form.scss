@@ -15,20 +15,20 @@ header {
 }
 
 .login-form-box{
+  height: 100%;
   width: 360px;
   margin-left: 50px;
   postion: relative;
   display: block;
   height: 545px;
-  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .login-form{
-  height: 100%;
+  margin-top: 100px;
   width: 100%;
   margin-bottom: 0px;
   display: block;
-  background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
   border-radius: 5px;
 }
@@ -49,34 +49,28 @@ header {
 
 .session-submit{
   width: 80%;
-  border: 1px solid orange;
+  border-color: #cf6000;
   border-radius: 5px;
   height: auto;
   line-height: 20px;
   padding: 9px 11px;
   text-align: center;
-  color: white;
-  background-color: orange;
+  color: #fff;
+  background-color: #e86c00;
   margin-bottom: 20px;
 }
 
 .demo-login {
   width: 80%;
-  border: 1px solid orange;
+  border-color: #cf6000;
   border-radius: 5px;
   height: auto;
   line-height: 20px;
   padding: 9px 11px;
   text-align: center;
-  color: white;
-  background-color: orange;
+  color: #fff;
+  background-color: #e86c00;
   margin-bottom: 20px;
-}
-
-.welcome-message{
-  font-weight: 700;
-  font-size: 30px;
-  color: orange;
 }
 
 .tag-after-button {

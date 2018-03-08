@@ -53,7 +53,6 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <p className="welcome-message">Welcome to TheRule!</p>
           <br/>
           {this.renderErrors()}
           <div className="login-form">
