@@ -21,7 +21,7 @@ const App = () => (
     <div>
       <header className="header-nav">
         <Link to="/" className="header-link">
-          <img src={window.logo} className="logo"/>
+          <p className="logo">TheRule</p>
         </Link>
         <GreetingContainer />
       </header>

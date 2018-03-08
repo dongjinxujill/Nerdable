@@ -24,7 +24,7 @@ class ProjectsIndex extends React.Component {
           <form className="makeit-searchform">
             <span className="title">Let's Make</span>
             <div className="makeit-searchfield">potential search bar</div>
-            <a className="makeit-searchbutton"><img src={window.searchbutton}/></a>
+            <i className="fas fa-search"></i>
           </form>
         </div>
         <ul className="project">

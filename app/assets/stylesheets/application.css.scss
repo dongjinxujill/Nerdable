@@ -17,3 +17,9 @@
  @import "base/reset";
  @import "base/layout";
  @import "components/*";
+
+
+ @font-face {
+   font-family: "CompleteInHim";
+   src: url('/assets/CompleteInHim') format("truetype");
+ }
