@@ -10,6 +10,8 @@ import {
 
 import ProjectsIndexContainer from './projects/projects_index_container';
 import ProjectShowContainer from './projects/project_show_container';
+import EditProjectForm from './projects/edit_project_form_container';
+import ProjectForm from './projects/create_project_form_container';
 import Footer from './footer/footer';
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -23,6 +25,7 @@ const App = () => (
         <Link to="/" className="header-link">
           <p className="logo">TheRule</p>
         </Link>
+        <Link className="write-project-button" to="/projects/new" component={ProjectForm}>Write a Project</Link>
         <GreetingContainer />
       </header>
       <Switch>
@@ -30,6 +33,8 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route exact path="/" component={ProjectsIndexContainer}/>
         <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
+        <ProtectedRoute path="/projects/:projectId/edit" component={EditProjectForm}/>
+        <ProtectedRoute path="/projects/new" component={ProjectForm}/>
       </Switch>
     </div>
     <Footer />

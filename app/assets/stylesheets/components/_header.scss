@@ -2,15 +2,28 @@
   position: relative;
   background-color: #eee;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
   padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.write-project-button {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42857;
+  display: inline-block;
+  padding: 12px 12px;
 }
 
 .logo {
   font-size: 50px;
   font-weight: 700;
   color: #555;
-  margin-left: 100px;
   letter-spacing: 2px;
 }
 
@@ -24,7 +37,6 @@
   position: relative;
   top: 20px;
   font-size: 12px;
-  margin-right: 100px;
 }
 .login:hover{
   text-decoration: none;
