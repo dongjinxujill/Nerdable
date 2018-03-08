@@ -24,6 +24,6 @@ users = User.create([
     password: 'hulamadx'
   },
   {
-    username: 'demoLogin',
+    username: 'demologin',
     password: 'demologin'
   }])

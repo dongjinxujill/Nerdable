@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import StepForm from '../steps/step_form';
 
 class ProjectForm extends React.Component {
   constructor(props) {
@@ -42,7 +43,6 @@ class ProjectForm extends React.Component {
           <input className="inputfile" name="file" id="file" type="file" onChange={this.updateFile.bind(this)}></input>
           <label for="file"><i className="fas fa-plus"></i>Click To Add Images</label>
           <input className="create-project-submit" type="submit" value='Publish' />
-          
           <label className="create-project-title">Title
             <input
               type="text"
@@ -50,6 +50,7 @@ class ProjectForm extends React.Component {
               onChange={this.update('title')} />
           </label>
           <img src={this.state.imageUrl}/>
+          <StepForm project={this.state}/>
         </form>
       </div>
     );

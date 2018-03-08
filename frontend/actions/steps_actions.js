@@ -1,4 +1,4 @@
-import * as StepsApiUtil from '../util/step_api_util';
+import * as StepsApiUtil from '../util/steps_api_util';
 
 export const RECEIVE_STEP = 'RECEIVE_STEP';
 export const REMOVE_STEP = 'REMOVE_STEP';

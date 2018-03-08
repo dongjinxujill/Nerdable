@@ -8,14 +8,18 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-import ProjectsIndexContainer from './projects/projects_index_container';
-import ProjectShowContainer from './projects/project_show_container';
-import EditProjectForm from './projects/edit_project_form_container';
-import ProjectForm from './projects/create_project_form_container';
-import Footer from './footer/footer';
 import GreetingContainer from './greeting/greeting_container';
+
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
+
+import ProjectsIndexContainer from './projects/projects_index_container';
+import ProjectShowContainer from './projects/project_show_container';
+import ProjectForm from './projects/create_project_form_container';
+import EditProjectForm from './projects/edit_project_form_container';
+
+import Footer from './footer/footer';
+
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
