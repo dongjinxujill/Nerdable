@@ -18,6 +18,7 @@ import ProjectShowContainer from './projects/project_show_container';
 import ProjectForm from './projects/create_project_form_container';
 import EditProjectForm from './projects/edit_project_form_container';
 
+import StepForm from './steps/step_form';
 import Footer from './footer/footer';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -36,6 +37,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route exact path="/" component={ProjectsIndexContainer}/>
+        <Route exact path="/projects/steps" component={StepForm} />
         <ProtectedRoute exact path="/projects/new" component={ProjectForm}/>
         <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectForm}/>
         <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
