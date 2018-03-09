@@ -29,8 +29,9 @@ class StepForm extends React.Component {
   render(){
     // debugger
     return (
-      <ul>
-        <input type="file" onChange={this.updateFile} />
+      <ul  className="each-step-ul">
+        <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile} />
+        <label for="file"><i className="fas fa-arrow-down"></i>Drag Images From Top Bar</label>
         <img src={this.state.imageUrls}/>
         <li>Step &nbsp;{this.state.stepNumber}: {this.state.title}</li>
         <button onClick={this.deleteSpecificStep}>DELETE</button>

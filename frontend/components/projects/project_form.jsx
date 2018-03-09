@@ -65,7 +65,7 @@ class ProjectForm extends React.Component {
 
   renderSteps(){
     return (
-      <button onClick={this.updateStep}>Add Steps</button>
+      <button className="add-step-button" onClick={this.updateStep}>Add Steps</button>
     );
   }
 
@@ -74,18 +74,18 @@ class ProjectForm extends React.Component {
     return (
       <div>
         <form className="create-project-form" onSubmit={this.handleSubmit}>
-          <input className="inputfile" name="file" id="file" type="file" onClick={this.updateFile.bind(this)}></input>
-          <label>
-            <i className="fas fa-plus"></i>Click To Add Images
-          </label>
-          <input className="create-project-submit" type="submit" value='Publish' />
           <label className="create-project-title">Title
             <input
               type="text"
               value={this.state.title}
               onChange={this.update('title')} />
           </label>
-          <img src={this.state.imageUrl}/>
+          <input className="inputfile" name="file" id="file" type="file" onClick={this.updateFile.bind(this)}/>
+          <label for="file">
+            <i className="fas fa-plus"></i>Click To Add Images
+          </label>
+          <img className="header-image" src={this.state.imageUrl}/>
+          <input className="create-project-submit" type="submit" value='Publish' />
           {this.renderSteps()}
           {Object.values(this.state.steps).map((step, idx) => {
             return (
