@@ -47,6 +47,6 @@ class Api::ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :body, :image)
+    params.require(:project).permit(:title, :body, :image, steps_attributes:[:title, :step_number, :body, :image])
   end
 end
