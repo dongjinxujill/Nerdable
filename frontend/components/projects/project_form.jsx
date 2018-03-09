@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import StepForm from '../steps/step_form';
+import StepProjectForm from '../steps/step_project_form';
 import { Link} from 'react-router-dom';
 import merge from 'lodash/merge';
 
@@ -25,8 +25,8 @@ class ProjectForm extends React.Component {
   handleSubmit(e) {
     const formData = new FormData();
     formData.append("project[title]", this.state.title);
-    formData.append("project[body]", this.state.body);
     formData.append("project[image]", this.state.imageFile);
+
     e.preventDefault();
     this.props.action(formData).then(() => this.props.history.push('/'));
   }
@@ -70,16 +70,15 @@ class ProjectForm extends React.Component {
   }
 
   render () {
-    // debugger
     return (
       <div>
         <form className="create-project-form" onSubmit={this.handleSubmit}>
-          <label className="create-project-title">Title
+          <li className="create-project-title">
             <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('title')} />
-          </label>
+            type="text"
+            value={this.state.title}
+            onChange={this.update('title')} placeholder="Click To Edit Title"/>
+          </li>
           <input className="inputfile" name="file" id="file" type="file" onClick={this.updateFile.bind(this)}/>
           <label for="file">
             <i className="fas fa-plus"></i>Click To Add Images
@@ -88,7 +87,7 @@ class ProjectForm extends React.Component {
           <input className="create-project-submit" type="submit" value='Publish' />
           {Object.values(this.state.steps).map((step, idx) => {
             return (
-                <li key={idx} className="each-step-li"><StepForm step={step} stepId={idx} deleteStep={this.deleteStep}/></li>
+              <li key={idx} className="each-step-li"><StepProjectForm step={step} stepId={idx} deleteStep={this.deleteStep}/></li>
               );
           })}
           {this.renderSteps()}

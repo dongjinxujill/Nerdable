@@ -13,9 +13,9 @@ import configureStore from './store/store';
 // window.receiveAllProjects = receiveAllProjects;
 // window.receiveProject = receiveProject;
 // window.removeProject = removeProject;
-// window.store = configureStore();
-// const store = window.store;
-// window.getState = store.getState();
+window.store = configureStore();
+const store = window.store;
+window.getState = store.getState();
 // window.dispatch = store.dispatch;
 
 document.addEventListener('DOMContentLoaded', () => {

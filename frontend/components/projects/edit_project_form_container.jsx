@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProjectForm from './project_form';
-import { fetchProject, updateProject } from '../../actions/projects_actions';
+import { fetchProject, updateProject, deleteProject } from '../../actions/projects_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
@@ -16,6 +16,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchProject: id => dispatch(fetchProject(id)),
     action: project => dispatch(updateProject(project)),
+    deleteProject: id => dispatch(deleteProject(id))
   };
 };
 
@@ -23,7 +24,7 @@ class EditProjectForm extends React.Component {
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
   }
-  
+
   //
   // componentWillReceiveProps(nextProps) {
   //   if (this.props.projectId !== nextProps.match.params.projectId) {
@@ -39,6 +40,7 @@ class EditProjectForm extends React.Component {
         formType={formType}
         project={project}
         currentUser={currentUser}
+        deleteProject={this.props.deleteProject}
         />
     );
   }

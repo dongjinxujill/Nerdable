@@ -121,6 +121,16 @@
   -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
 }
 
+.create-project-title{
+  list-style-type: none;
+  border: 1px solid #dedede;
+  padding: 10px 0px 10px 0px;
+  border-radius: 8px;
+  width: 50%;
+  margin: 10px 0px 0px 270px;
+  background-color: #eee;
+  margin-bottom: 10px;
+}
 .inputfile {
 	width: 0.1px;
 	height: 0.1px;
@@ -161,9 +171,4 @@
   font-size: 14px;
   padding: 6px 12px;
   margin:9px;
-}
-
-
-.create-project-title{
-  color: white;
 }
