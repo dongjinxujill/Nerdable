@@ -30,11 +30,10 @@ class StepForm extends React.Component {
     // debugger
     return (
       <ul  className="each-step-ul">
-        <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile} />
+        <input className="inputfile-step" id="file" name="file" type="file" onChange={this.updateFile} />
         <label for="file"><i className="fas fa-arrow-down"></i>Drag Images From Top Bar</label>
-        <img src={this.state.imageUrls}/>
-        <li>Step &nbsp;{this.state.stepNumber}: {this.state.title}</li>
-        <button onClick={this.deleteSpecificStep}>DELETE</button>
+        <li className="step-click-to-edit">Step &nbsp;{this.state.stepNumber}: {this.state.title}</li>
+        <button className="step-delete-button" onClick={this.deleteSpecificStep}><i className="fas fa-times"></i></button>
       </ul>
     );
   }

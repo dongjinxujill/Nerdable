@@ -32,7 +32,7 @@ class ProjectForm extends React.Component {
   }
 
   updateFile(e){
-    debugger
+    // debugger
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function () {
@@ -65,7 +65,7 @@ class ProjectForm extends React.Component {
 
   renderSteps(){
     return (
-      <button className="add-step-button" onClick={this.updateStep}>Add Steps</button>
+      <button className="add-step-button" onClick={this.updateStep}>Add Step</button>
     );
   }
 
@@ -86,12 +86,12 @@ class ProjectForm extends React.Component {
           </label>
           <img className="header-image" src={this.state.imageUrl}/>
           <input className="create-project-submit" type="submit" value='Publish' />
-          {this.renderSteps()}
           {Object.values(this.state.steps).map((step, idx) => {
             return (
-                <li key={idx}><StepForm step={step} stepId={idx} deleteStep={this.deleteStep}/></li>
+                <li key={idx} className="each-step-li"><StepForm step={step} stepId={idx} deleteStep={this.deleteStep}/></li>
               );
           })}
+          {this.renderSteps()}
         </form>
       </div>
     );

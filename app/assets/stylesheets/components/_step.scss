@@ -1,0 +1,84 @@
+.each-step-ul{
+  display: block;
+  background-color: #eee;
+  position: relative;
+  margin-top: 30px;
+  border-radius: 8px;
+  width: 990px;
+  height: 130px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.inputfile-step {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile-step + label {
+  text-align: center;
+  position: relative;
+  float:left;
+  margin-left:10px;
+  color: #AAA;
+  display: inline-block;
+  cursor: pointer;
+  width: 50%;
+  font-size: 20px;
+  padding: 40px 0px 10px 0px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  background-color: white;
+  margin-top: 10px;
+  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+  height: 50px;
+}
+
+.add-step-button{
+  border-color: #dedede;
+  float: center;
+  margin-top: 50px;
+  z-index: 100;
+  color: #333;
+  padding: 11px 19px;
+  font-size: 17.5px;
+  border-radius: 6px;
+  background-color: #f6f6f6;
+  margin-bottom: 50px;
+}
+
+.each-step-li{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.fa-arrow-down{
+
+}
+
+.step-click-to-edit{
+  color: #333;
+  // position: relative;
+  top: 5px;
+  font-size: 15px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 50px;
+  cursor: pointer;
+
+}
+
+.step-delete-button{
+  display: block;
+  width: 24px;
+  height: 24px;
+  // overflow: hidden;
+  // position: relative;
+  margin: 100px 5px 0px 0px;
+}
