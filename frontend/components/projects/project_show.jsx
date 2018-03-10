@@ -8,11 +8,11 @@ class ProjectShow extends React.Component {
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.projectId !== nextProps.match.params.projectId) {
-      this.props.fetchProject(nextProps.match.params.projectId);
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.projectId !== nextProps.match.params.projectId) {
+  //     this.props.fetchProject(nextProps.match.params.projectId);
+  //   }
+  // }
 
   render() {
     const { project } = this.props;
@@ -25,6 +25,15 @@ class ProjectShow extends React.Component {
         <p className="project-show-author">by {this.props.authors[project.author_id].username}</p>
         <p className="project-show-date">Posted: {project.createdAt}</p>
         <p className="project-show-body">{project.body}</p>
+        {this.props.steps.map((step,idx)=>{
+          return (
+            <div>
+              <li>{step.stepNumber}</li>
+              <li>{step.title}</li>
+              <li>{step.body}</li>
+            </div>
+          );
+        })}
       </div>
     );
   }

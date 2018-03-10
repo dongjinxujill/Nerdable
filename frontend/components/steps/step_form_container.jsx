@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import StepForm from './step_form';
+import {createStep,deleteStep,
+} from '../../actions/steps_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const msp = (state, ownProps) => {
   // debugger
-
-  const steps = [{title: "(click to edit)", body: '', stepNumber: state., imageFile: null, imageUrl: null}]};
-  const currentUser = state.session.currentUser;
-  return { steps, currentUser };
+  return ({projectId: ownProps.projectId,steps: Object.values(ownProps.steps)});
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  };
-};
+const mdp = dispatch => ({
+  createStep: step => dispatch(createStep(step)),
+  deleteStep: id => dispatch(deleteStep(id))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(StepForm);
+export default connect(
+  msp,
+  mdp
+)(StepForm);

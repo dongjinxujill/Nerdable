@@ -12,29 +12,25 @@ export const fetchProject = id => (
   })
 );
 
-export const createProject = (formData) => {
+export const createProject = (project) => {
   return $.ajax({
     method: 'POST',
     url: '/api/projects',
-    data: formData,
-    contentType: false,
-    processData: false
+    data: {project}
   });
 };
 
-export const updateProject = (formData) => {
+export const updateProject = (project) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/projects/${formData.id}`,
-    data: formData,
-    contentType: false,
-    processData: false
+    url: `/api/projects/${project.id}`,
+    data: {project}
   });
-}
+};
 
 export const deleteProject = (id) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/projects/${id}`
   });
-}
+};

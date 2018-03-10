@@ -1,11 +1,20 @@
+import {RECEIVE_STEP,DELETE_STEP} from '../../actions/steps_actions';
+import {
+  RECEIVE_PROJECT
+} from '../../actions/projects_actions';
 import merge from 'lodash/merge';
-import {RECEIVE_PROJECT} from '../../actions/projects_actions';
 
 const stepsReducer = (state = {}, action) => {
   Object.freeze(state);
-  switch(action.type) {
+  switch (action.type) {
+    case RECEIVE_STEP:
+      return merge({}, state, action.step);
     case RECEIVE_PROJECT:
-      return merge({}, state, action.project.steps);
+      return merge({}, state, action.payload.project.steps);
+    case DELETE_STEP:
+      let curr = merge({}, state);
+      delete curr[action.stepId];
+      return curr;
     default:
       return state;
   }

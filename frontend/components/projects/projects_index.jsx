@@ -1,5 +1,6 @@
 import React from 'react';
-import ProjectsIndexItem from './projects_index_item';
+// import ProjectsIndexItem from './projects_index_item';
+import { Link } from 'react-router-dom';
 
 class ProjectsIndex extends React.Component {
 
@@ -7,18 +8,9 @@ class ProjectsIndex extends React.Component {
     this.props.fetchAllProjects();
   }
 
+
   render() {
     // debugger
-    const projects = this.props.projects.map(project => {
-      return (
-        <ProjectsIndexItem
-          key={project.id}
-          project={project}
-          username={this.props.users[project.author_id].username}
-          />
-      );
-    });
-
     return (
       <div className="projects-index">
         <div className="container">
@@ -29,7 +21,17 @@ class ProjectsIndex extends React.Component {
           </form>
         </div>
         <ul className="project">
-          {projects}
+          {this.props.projects.map(project => {
+            return (
+              <li>
+                <Link to={`/projects/${project.id}`}>
+                  <li className="project-image"><img src={project.image}/></li>
+                  <li className="project-title">{project.title}</li>
+                </Link>
+                <li className="project-author">by {this.props.users[project.author_id].username}</li>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );

@@ -6,7 +6,8 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   return {
     project: state.entities.projects[ownProps.match.params.projectId],
-    authors: state.entities.users
+    authors: state.entities.users,
+    steps: Object.values(state.entities.steps)
   };
 };
 

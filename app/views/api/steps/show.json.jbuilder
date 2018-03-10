@@ -1,3 +1,3 @@
-json.set! step.id do
-  json.extract! step, :id, :title, :body, :stepNumber, :image, :project_id
+json.set! @step.id do
+  json.extract! @step, :id, :title, :body, :step_number
 end

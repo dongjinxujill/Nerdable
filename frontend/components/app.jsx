@@ -15,11 +15,11 @@ import LogInFormContainer from './session_form/login_form_container';
 
 import ProjectsIndexContainer from './projects/projects_index_container';
 import ProjectShowContainer from './projects/project_show_container';
-import ProjectForm from './projects/create_project_form_container';
-import EditProjectForm from './projects/edit_project_form_container';
+import ProjectForm from './projects/project_form_container';
 
-import StepForm from './steps/step_form';
+import StepItemContainer from './steps/step_item_container';
 import Footer from './footer/footer';
+
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -36,11 +36,11 @@ const App = () => (
       <Switch>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-        <Route exact path="/" component={ProjectsIndexContainer}/>
-        <Route exact path="/projects/steps/:stepId" component={StepForm} />
         <ProtectedRoute exact path="/projects/new" component={ProjectForm}/>
-        <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectForm}/>
+        <ProtectedRoute exact path="/projects/:projectId/edit" component={ProjectForm}/>
+        <ProtectedRoute exact path="/projects/:projectId/steps/:stepId/edit" component={StepItemContainer} />
         <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
+        <Route exact path="/" component={ProjectsIndexContainer}/>
       </Switch>
     </div>
     <Footer />
