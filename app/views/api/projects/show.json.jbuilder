@@ -3,9 +3,9 @@ json.project do
   json.createdAt @project.created_at.to_date
 
   json.steps do
-    @steps.each do |step|
+    @project.steps.each do |step|
       json.set! step.id do
-        json.extract! step, :id, :title, :body, :image, :step_number
+        json.extract! step, :id, :title, :body, :image, :step_number, :project_id
       end
     end
   end

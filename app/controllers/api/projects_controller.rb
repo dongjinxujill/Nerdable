@@ -4,7 +4,6 @@ class Api::ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     if @project
-      @steps = @project.steps
       render :show
     else
       render json: ["non existing project"], status: 404
@@ -16,12 +15,9 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
-    debugger
     @project = Project.new(project_params)
     @project.author_id = current_user.id
-    debugger
     if @project.save
-      @steps = @project.steps
       render :show
     else
       render json: @project.errors.full_messages, status: 422
@@ -33,7 +29,6 @@ class Api::ProjectsController < ApplicationController
     if @project.author_id != current_user.id
       render json: ["you are not authorized"], status: 403
     elsif @project.update(project_params)
-      @steps = @project.steps
       render :show
     else
       render json: @project.errors.full_messages, status: 422
@@ -52,6 +47,6 @@ class Api::ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :body, :image, steps_attributes:[:title, :step_number, :body, :image])
+    params.require(:project).permit(:title, :body, :image)
   end
 end
