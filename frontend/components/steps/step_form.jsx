@@ -11,6 +11,12 @@ class StepForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
   }
 
+  componentWillUnmount(){
+    if (this.props.errors) {
+      this.props.clearStepErrors();
+    }
+  }
+
 
   updateFile(e){
     let file = e.currentTarget.files[0];
@@ -43,11 +49,11 @@ class StepForm extends React.Component {
     let formData = new FormData();
     formData.append('step[body]', this.state.body || '');
     formData.append('step[title]', this.state.title || '');
+    formData.append('step[project_id]', this.props.projectId);
+    formData.append("step[step_number]", stepNumber);
     if (this.state.imageFile) {
       formData.append("project[image]", this.state.imageFile);
     }
-    formData.append("step[project_id]", this.props.projectId);
-    formData.append("step[step_number]", stepNumber);
     this.props.createStep(formData);
   }
 
@@ -55,10 +61,13 @@ class StepForm extends React.Component {
     // debugger
     return (
       <div>
-        {this.props.errors.map((step,idx)=> {
+        {this.state.steps.map((step,idx)=> {
           return (
             <div>
-              <input type="file" onChange={this.updateFile}/>
+                {this.props.errors.map((err)=> {
+                  return <li>{err}</li>;
+                })}
+                <input type="file" onChange={this.updateFile}/>
               <img src={this.state.imageUrl}/>
               <li>
                 <Link to={`/projects/${this.props.projectId}/steps/${step.id}/edit`}>

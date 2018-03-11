@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ProjectForm from './project_form';
-import { createProject,fetchProject, updateProject } from '../../actions/projects_actions';
+import { createProject,fetchProject, updateProject, clearProjectErrors} from '../../actions/projects_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let formType, project;
@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch) => {
 
     fetchProject: id => dispatch(fetchProject(id)),
     createProject: project => dispatch(createProject(project)),
-    updateProject: (project, projectId) => dispatch(updateProject(project, projectId))
+    updateProject: (project, projectId) => dispatch(updateProject(project, projectId)),
+    clearProjectErrors: () => dispatch(clearProjectErrors())
   };
 };
 

@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
 import StepForm from './step_form';
-import {createStep,deleteStep,
+import {createStep,deleteStep, clearStepErrors
 } from '../../actions/steps_actions';
 
-const msp = (state, ownProps) => {
+const msp = (state, ownProps) => ({
   // debugger
-  return ({projectId: ownProps.projectId,steps: Object.values(ownProps.steps), imageFile: null, imageUrl: null});
-};
+  projectId: ownProps.projectId,
+  steps: Object.values(ownProps.steps),
+  imageFile: null,
+  imageUrl: null,
+  errors: state.errors.step
+});
 
 const mdp = dispatch => ({
   createStep: step => dispatch(createStep(step)),
-  deleteStep: id => dispatch(deleteStep(id))
+  deleteStep: id => dispatch(deleteStep(id)),
+  clearStepErrors: () => dispatch(clearStepErrors())
 });
 
 export default connect(

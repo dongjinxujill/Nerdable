@@ -12,6 +12,7 @@ class ProjectForm extends React.Component {
     this.handleAddStep = this.handleAddStep.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.renderButton = this.renderButton.bind(this);
+    this.clearError = this.clearError.bind(this);
     this.state = this.props.project;
     this.update = this.update.bind(this);
   }
@@ -23,13 +24,18 @@ class ProjectForm extends React.Component {
     }
   }
 
+  componentWillUnmount(){
+    if (this.props.errors) {
+      this.props.clearProjectErrors();
+    }
+  }
+
   updateFile(e){
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function () {
       this.setState({imageFile: file, imageUrl: fileReader.result});
     }.bind(this);
-
     if (file) {
       fileReader.readAsDataURL(file);
     } else {
@@ -86,7 +92,7 @@ class ProjectForm extends React.Component {
 
   displayImage() {
     if (this.props.formType === "update" && this.state.imageFile === null) {
-      return <img src={this.props.project.image} />
+      return <img src={this.props.project.image} />;
     } else if (this.state.imageUrl) {
       return <img src={this.state.imageUrl}/>;
     } else {
@@ -95,7 +101,11 @@ class ProjectForm extends React.Component {
       );
     }
   }
-
+  clearError(){
+    if (this.state.title !== "" && this.state.body !== "" && this.state.imageFile !== null){
+      return this.props.clearProjectErrors();
+    }
+  }
   render() {
     // debugger
     return (

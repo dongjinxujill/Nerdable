@@ -4,6 +4,7 @@ export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
+export const CLEAR_PROJECT_ERRORS = 'CLEAR_PROJECT_ERRORS';
 
 export const receiveAllProjects = (payload) => ({
   type: RECEIVE_ALL_PROJECTS,
@@ -25,10 +26,14 @@ export const receiveProjectErrors = (errors) => ({
   errors
 });
 
+export const clearProjectErrors = () => ({
+  type: CLEAR_PROJECT_ERRORS
+});
+
 export const fetchAllProjects = () => dispatch => (
   ProjectsApiUtil.fetchAllProjects().then(
     payload => dispatch(receiveAllProjects(payload)),
-  err => dispatch(receiveProjectErrors(err.responseJSON))
+    err => dispatch(receiveProjectErrors(err.responseJSON))
   )
 );
 

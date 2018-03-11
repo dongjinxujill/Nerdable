@@ -1,5 +1,5 @@
 import {
-  RECEIVE_PROJECT_ERRORS
+  RECEIVE_PROJECT_ERRORS, CLEAR_PROJECT_ERRORS
 } from '../../actions/projects_actions';
 import merge from 'lodash/merge';
 
@@ -9,6 +9,8 @@ const projectErrorsReducer = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_PROJECT_ERRORS:
       return merge([],action.errors);
+    case CLEAR_PROJECT_ERRORS:
+      return [];
     default:
       return state;
   }
