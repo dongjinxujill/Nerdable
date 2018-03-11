@@ -8,9 +8,22 @@ class StepForm extends React.Component {
     super(props);
     this.state = {steps: []};
     this.addStep = this.addStep.bind(this);
-    // this.renderSteps = this.renderSteps.bind(this);
-
+    this.updateFile = this.updateFile.bind(this);
   }
+
+
+  updateFile(e){
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({imageFile: file, imageUrl: fileReader.result});
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
 
   componentWillReceiveProps(newProps) {
     if (newProps.steps !== this.props.steps) {
@@ -26,7 +39,14 @@ class StepForm extends React.Component {
     } else {
       stepNumber = 0;
     }
-    this.props.createStep({title: 'Click To Edit',body: '',step_number: stepNumber, project_id: this.props.projectId});
+
+    let formData = new FormData();
+    formData.append('step[body]', this.state.body || '');
+    formData.append('step[title]', this.state.title || '');
+    formData.append("step[image]", this.state.imageFile || '');
+    formData.append("step[project_id]", this.props.projectId);
+    formData.append("step[step_number]", stepNumber);
+    this.props.createStep(formData);
   }
 
   render(){
@@ -36,6 +56,8 @@ class StepForm extends React.Component {
         {this.state.steps.map((step,idx)=> {
           return (
             <div>
+              <input type="file" onChange={this.updateFile}/>
+              <img src={this.state.imageUrl}/>
               <li>
                 <Link to={`/projects/${this.props.projectId}/steps/${step.id}/edit`}>
                   Step #{idx}: {step.title}

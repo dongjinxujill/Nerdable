@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
 
   if (ownProps.match.path === "/projects/new"){
     formType = "create";
-    project = state.entities.projects;
+    project = {title: "", body: "", imageFile: null, imageUrl:null};
   } else{
     formType = "update";
     project = state.entities.projects[ownProps.match.params.projectId];
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
 
     fetchProject: id => dispatch(fetchProject(id)),
     createProject: project => dispatch(createProject(project)),
-    updateProject: (project) => dispatch(updateProject(project))
+    updateProject: (project, projectId) => dispatch(updateProject(project, projectId))
   };
 };
 

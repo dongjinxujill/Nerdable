@@ -12,11 +12,13 @@ export const fetchStep = id => (
   })
 );
 
-export const createStep = step => (
+export const createStep = formData => (
   $.ajax({
     method: "POST",
     url: "/api/steps",
-    data: { step },
+    contentType: false,
+    processData: false,
+    data: formData
   })
 );
 

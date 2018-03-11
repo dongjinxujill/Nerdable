@@ -5,7 +5,7 @@ import {createStep,deleteStep,
 
 const msp = (state, ownProps) => {
   // debugger
-  return ({projectId: ownProps.projectId,steps: Object.values(ownProps.steps)});
+  return ({projectId: ownProps.projectId,steps: Object.values(ownProps.steps), imageFile: null, imageUrl: null});
 };
 
 const mdp = dispatch => ({

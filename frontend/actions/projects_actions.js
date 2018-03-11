@@ -38,8 +38,8 @@ export const createProject = (project) => dispatch => (
   )
 );
 
-export const updateProject = (project) => dispatch => (
-  ProjectsApiUtil.updateProject(project).then(project => (
+export const updateProject = (project, projectId) => dispatch => (
+  ProjectsApiUtil.updateProject(project, projectId).then(project => (
     dispatch(receiveProject(project)))
   )
 );

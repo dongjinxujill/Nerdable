@@ -1,7 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link} from 'react-router-dom';
-import merge from 'lodash/merge';
 import StepFormContainer from '../steps/step_form_container';
 
 
@@ -10,9 +8,9 @@ class ProjectForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.displayImage = this.displayImage.bind(this);
+    this.displayImage = this.displayImage.bind(this);
     this.handleAddStep = this.handleAddStep.bind(this);
-    // this.updateFile = this.updateFile.bind(this);
+    this.updateFile = this.updateFile.bind(this);
     this.renderButton = this.renderButton.bind(this);
     this.state = this.props.project;
     this.update = this.update.bind(this);
@@ -25,18 +23,17 @@ class ProjectForm extends React.Component {
     }
   }
 
-  // updateFile(e){
-  //   let file = e.currentTarget.files[0];
-  //   let fileReader = new FileReader();
-  //   debugger
-  //   fileReader.onloadend = function () {
-  //     this.setState({imageFile: file, imageUrl: fileReader.result});
-  //   }.bind(this);
-  //
-  //   if (file) {
-  //     fileReader.readAsDataURL(file);
-  //   }
-  // }
+  updateFile(e){
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({imageFile: file, imageUrl: fileReader.result});
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
 
   update(field) {
     let that = this;
@@ -48,27 +45,22 @@ class ProjectForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const file = this.state.imageFile;
-    // let formData = new FormData();
-    // formData.append('project[body]', this.state.body);
-    // formData.append('project[title]', this.state.title);
-    const project = {title: this.state.title, body: this.state.body, id: this.props.match.params.projectId};
-    // formData.append("project[image]", this.state.imageFile);
-    // debugger
-    this.props.updateProject(project, this.props.match.params.projectId).then(() => {
+    let formData = new FormData();
+    formData.append('project[body]', this.state.body);
+    formData.append('project[title]', this.state.title);
+    formData.append("project[image]", this.state.imageFile);
+    this.props.updateProject(formData, this.props.match.params.projectId).then(() => {
       this.props.history.push(`/projects/${this.props.match.params.projectId}`);
     });
   }
 
   handleAddStep(e){
+    let formData = new FormData();
+    formData.append('project[title]', this.state.title);
+    formData.append('project[body]', this.state.body);
+    formData.append("project[image]", this.state.imageFile);
     e.preventDefault();
-    // const file = this.state.imageFile;
-    // let formData = new FormData();
-    // formData.append('project[body]', this.state.body);
-    // formData.append('project[title]', this.state.title);
-    // formData.append("project[image]", this.state.imageFile);
-    this.props.createProject({title: this.state.title, body: this.state.body}).then((project) => {
-      // debugger
+    this.props.createProject(formData).then((project) => {
       return this.props.history.replace(`/projects/${project.payload.project.id}/edit`);
     });
   }
@@ -88,12 +80,29 @@ class ProjectForm extends React.Component {
     }
   }
 
+  displayImage() {
+    if (this.props.formType === "update" && this.state.imageFile === null && this.props.project) {
+      return <img src={this.props.project.image} />
+    } else if (this.state.imageUrl) {
+      return <img src={this.state.imageUrl}
+        className="project-form__img-main" />;
+    } else {
+      return (
+        <h3 className="project-form__img-upload-text">
+          <i className="fas fa-plus"></i> Click To Add Title Image
+        </h3>
+      );
+    }
+  }
+
   render() {
     return (
       <div>
+        <input type="file" onChange={this.updateFile}/>
         <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
         <input type="text" value={this.state.body} placeholder="Body" onChange={this.update('body')}/>
         {this.renderButton()}
+        {this.displayImage()}
       </div>
     );
   }
