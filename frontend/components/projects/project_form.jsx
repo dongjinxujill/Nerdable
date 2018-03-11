@@ -8,7 +8,7 @@ class ProjectForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.displayImage = this.displayImage.bind(this);
+    this.renderImage = this.renderImage.bind(this);
     this.handleAddStep = this.handleAddStep.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.renderButton = this.renderButton.bind(this);
@@ -20,7 +20,7 @@ class ProjectForm extends React.Component {
   componentDidMount() {
     if (this.props.formType === "update") {
       this.props.fetchProject(this.props.match.params.projectId).then(project =>
-        {this.setState({body: this.props.project.body,title: this.props.project.title})});
+        {this.setState({body: this.state.body,title: this.state.title, imageFile: this.state.image})});
     }
   }
 
@@ -56,9 +56,11 @@ class ProjectForm extends React.Component {
     let formData = new FormData();
     formData.append('project[body]', this.state.body);
     formData.append('project[title]', this.state.title);
-    formData.append("project[image]", this.state.imageFile);
+    if (this.state.imageFile) {
+      formData.append("project[image]", this.state.imageFile);
+    }
     this.props.updateProject(formData, this.props.match.params.projectId).then(() => {
-      this.props.history.push(`/projects/${this.props.match.params.projectId}`);
+      this.props.history.replace(`/projects/${this.props.match.params.projectId}`);
     });
   }
 
@@ -90,15 +92,11 @@ class ProjectForm extends React.Component {
     }
   }
 
-  displayImage() {
-    if (this.props.formType === "update" && this.state.imageFile === null) {
-      return <img src={this.props.project.image} />;
-    } else if (this.state.imageUrl) {
+  renderImage() {
+    if (this.state.imageUrl) {
       return <img src={this.state.imageUrl}/>;
-    } else {
-      return (
-          <p>Click To Add Images</p>
-      );
+    } else if (this.state.image) {
+      return <img src={this.state.image} />;
     }
   }
   clearError(){
@@ -110,13 +108,13 @@ class ProjectForm extends React.Component {
     // debugger
     return (
       <div>
+        {this.renderImage()}
         {this.props.errors.map((err)=> {
           return <li>{err}</li>;
         })}
         <input type="file" onChange={this.updateFile}/>
         <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
         <input type="text" value={this.state.body} placeholder="Body" onChange={this.update('body')}/>
-        {this.displayImage()}
         {this.renderButton()}
       </div>
     );

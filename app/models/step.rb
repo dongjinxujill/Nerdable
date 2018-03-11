@@ -1,5 +1,5 @@
 class Step < ApplicationRecord
-  validates :step_number, presence: true
+  validates :step_number, :project_id, presence: true
 
   belongs_to :project, inverse_of: :steps
 

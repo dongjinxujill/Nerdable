@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  validates :title, :author_id, :image, presence: true
+  validates :title, :author_id, :image, :body, presence: true
 
   belongs_to :user,
   class_name: :User,

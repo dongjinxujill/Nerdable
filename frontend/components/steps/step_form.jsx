@@ -17,7 +17,6 @@ class StepForm extends React.Component {
     }
   }
 
-
   updateFile(e){
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
@@ -33,6 +32,7 @@ class StepForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.steps !== this.props.steps) {
+      this.setState({imageFile: null, imageUrl: null});
       this.setState({ steps: newProps.steps });
     }
   }
@@ -52,7 +52,7 @@ class StepForm extends React.Component {
     formData.append('step[project_id]', this.props.projectId);
     formData.append("step[step_number]", stepNumber);
     if (this.state.imageFile) {
-      formData.append("project[image]", this.state.imageFile);
+      formData.append("step[image]", this.state.imageFile);
     }
     this.props.createStep(formData);
   }

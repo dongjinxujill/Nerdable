@@ -7,8 +7,6 @@ const msp = (state, ownProps) => ({
   // debugger
   projectId: ownProps.projectId,
   steps: Object.values(ownProps.steps),
-  imageFile: null,
-  imageUrl: null,
   errors: state.errors.step
 });
 
