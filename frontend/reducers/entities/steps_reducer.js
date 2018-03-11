@@ -10,7 +10,7 @@ const stepsReducer = (state = {}, action) => {
     case RECEIVE_STEP:
       return merge({}, state, action.step);
     case RECEIVE_PROJECT:
-      return merge({}, state, action.payload.project.steps);
+      return merge({}, action.payload.project.steps);
     case DELETE_STEP:
       let curr = merge({}, state);
       delete curr[action.stepId];

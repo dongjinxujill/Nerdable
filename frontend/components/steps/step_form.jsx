@@ -13,7 +13,9 @@ class StepForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({ steps: newProps.steps });
+    if (newProps.steps !== this.props.steps) {
+      this.setState({ steps: newProps.steps });
+    }
   }
 
   addStep(e) {
