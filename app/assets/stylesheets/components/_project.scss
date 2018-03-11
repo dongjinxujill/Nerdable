@@ -6,6 +6,7 @@
   background: white;
 }
 
+
 .container{
   color: #fff;
   width:100%;
@@ -43,16 +44,19 @@
 }
 
 .project {
-  display: flex;
   background: white;
-  justify-content: space-around;
   margin-bottom: 20px;
+}
+
+.each-project-main{
+  display: inline-block;
 }
 
 .project-main-page{
   border: 1px solid #D3D3D3;
   box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
   text-align: center;
+  width: 100px;
 
 }
 
@@ -60,6 +64,8 @@
   width: 324px;
   border: 0;
   vertical-align: baseline;
+  width: 100px;
+
 }
 
 .project-title{
@@ -107,6 +113,40 @@
   word-wrap: break-word;
 }
 
+.all-steps{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-show-step{
+  list-style-type: none;
+  margin: 40px 0;
+}
+
+.project-show-step-number{
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.project-show-step-body{
+  display: block;
+  margin: 3px 0px 20px;
+  font-size:20px;
+  line-height: 32px;
+  font-weight: 300;
+  text-align: left;
+  color: #555;
+  word-wrap: break-word;
+  margin-left: 200px;
+}
+
+.project-show-step-image{
+
+
+}
+
 .create-project-form{
   padding: 0;
   margin-top: 40px;
@@ -146,7 +186,7 @@
   justify-content: center;
 }
 
-label {
+.create-project-image-container {
   color: #AAA;
   display: inline-block;
   cursor: pointer;

@@ -23,7 +23,7 @@ class ProjectsIndex extends React.Component {
         <ul className="project">
           {this.props.projects.map(project => {
             return (
-              <li>
+              <li className="each-project-main">
                 <Link to={`/projects/${project.id}`}>
                   <li className="project-image"><img src={project.image}/></li>
                   <li className="project-title">{project.title}</li>
