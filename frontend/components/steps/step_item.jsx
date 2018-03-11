@@ -37,7 +37,7 @@ class StepItem extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" placeholder="Title" onChange={this.update('title')} value={this.state.title} />
+        <input className="step-item-title" type="text" placeholder="Title" onChange={this.update('title')} value={this.state.title} />
         <input type="text" placeholder="Body" onChange={this.update('body')} value={this.state.body}/>
         <Link to={`/projects/${this.props.projectId}/edit`}>
           Back To Project

@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link} from 'react-router-dom';
-// import StepFormList from './step_form_list';
 
 class StepForm extends React.Component {
   constructor(props) {
@@ -9,6 +8,11 @@ class StepForm extends React.Component {
     this.state = {steps: []};
     this.addStep = this.addStep.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.renderStepImage = this.renderStepImage.bind(this);
+  }
+
+  componentDidMount(){
+    this.setState({title: 'Click To Edit'});
   }
 
   componentWillUnmount(){
@@ -23,7 +27,6 @@ class StepForm extends React.Component {
     fileReader.onloadend = function () {
       this.setState({imageFile: file, imageUrl: fileReader.result});
     }.bind(this);
-
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -32,7 +35,6 @@ class StepForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.steps !== this.props.steps) {
-      this.setState({imageFile: null, imageUrl: null});
       this.setState({ steps: newProps.steps });
     }
   }
@@ -57,35 +59,40 @@ class StepForm extends React.Component {
     this.props.createStep(formData);
   }
 
+  renderStepImage() {
+    debugger
+    if (this.state.imageUrl) {
+      return <img className="create-step-image-show" src={this.state.imageUrl}/>;
+    } else if (this.state.image) {
+      return <img className="create-step-image-show" src={this.state.image} />;
+    } else {
+      return (<p className="create-step-text-show"><i className="fas fa-arrow-down"></i>&ensp;Click To 222 Images</p>);
+    }
+  }
+
   render(){
     // debugger
     return (
       <div>
         {this.state.steps.map((step,idx)=> {
           return (
-            <div>
-                {this.props.errors.map((err)=> {
-                  return <li>{err}</li>;
-                })}
-                <input type="file" onChange={this.updateFile}/>
-              <img src={this.state.imageUrl}/>
-              <li>
-                <Link to={`/projects/${this.props.projectId}/steps/${step.id}/edit`}>
-                  Step #{idx}: {step.title}
-                </Link>
-              </li>
-              <li>
-                <Link to={`/projects/${this.props.projectId}/steps/${step.id}/edit`}>
-                  <p>Edit</p>
-                </Link>
-              </li>
-              <button onClick={() => this.props.deleteStep(step.id)}>Delete</button>
+            <div className="each-step-ul">
+              {this.props.errors.map((err)=> {
+                return <li className="create-step-error">{err}</li>;
+              })}
+              <label className="step-label" for="file">{this.renderStepImage()}
+                <input className="step-inputfile" id="file" type="file" onChange={this.updateFile}/>
+              </label>
+              <Link to={`/projects/${this.props.projectId}/steps/${step.id}/edit`}>
+                <p className="create-step-number">Step {idx}: {step.title}</p>
+              </Link>
+              <button className="step-delete-button" onClick={() => this.props.deleteStep(step.id)}>X</button>
             </div>
           )
         })}
-        <button onClick={this.addStep}>Add Step</button>
+        <button className="add-step-button" onClick={this.addStep}>Add Step</button>
       </div>
-    );
+    )
   }
 }
 

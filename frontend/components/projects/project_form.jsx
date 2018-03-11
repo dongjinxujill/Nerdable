@@ -79,14 +79,14 @@ class ProjectForm extends React.Component {
 
   renderButton(){
     if (this.props.formType === "create") {
-      return <button onClick={this.handleAddStep}>Add Step</button>;
+      return <button className="create-project-submit" onClick={this.handleAddStep}>Add Step</button>;
     } else if (this.props.formType === "update") {
       return (
         <div>
+          <button className="create-project-submit" onClick={this.handleSubmit}>Publish</button>
           <StepFormContainer
             projectId={this.props.match.params.projectId}
             steps={this.props.steps}/>
-          <button onClick={this.handleSubmit}>Publish</button>;
         </div>
       );
     }
@@ -94,9 +94,11 @@ class ProjectForm extends React.Component {
 
   renderImage() {
     if (this.state.imageUrl) {
-      return <img src={this.state.imageUrl}/>;
+      return <img className="create-project-image-show" src={this.state.imageUrl}/>;
     } else if (this.state.image) {
-      return <img src={this.state.image} />;
+      return <img className="create-project-image-show" src={this.state.image} />;
+    } else {
+      return (<p className="create-project-text-show"><i className="fas fa-plus"></i>&ensp;Click To Add Images</p>);
     }
   }
   clearError(){
@@ -107,14 +109,14 @@ class ProjectForm extends React.Component {
   render() {
     // debugger
     return (
-      <div>
-        {this.renderImage()}
+      <div className="create-project-form">
+        <input className="create-project-title" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
+        <label className="create-project-image-container" for="file">{this.renderImage()}
+          <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile}/>
+        </label>
         {this.props.errors.map((err)=> {
           return <li>{err}</li>;
-        })}
-        <input type="file" onChange={this.updateFile}/>
-        <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
-        <input type="text" value={this.state.body} placeholder="Body" onChange={this.update('body')}/>
+          })}
         {this.renderButton()}
       </div>
     );
