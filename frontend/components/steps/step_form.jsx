@@ -43,7 +43,9 @@ class StepForm extends React.Component {
     let formData = new FormData();
     formData.append('step[body]', this.state.body || '');
     formData.append('step[title]', this.state.title || '');
-    formData.append("step[image]", this.state.imageFile || '');
+    if (this.state.imageFile) {
+      formData.append("project[image]", this.state.imageFile);
+    }
     formData.append("step[project_id]", this.props.projectId);
     formData.append("step[step_number]", stepNumber);
     this.props.createStep(formData);
@@ -53,7 +55,7 @@ class StepForm extends React.Component {
     // debugger
     return (
       <div>
-        {this.state.steps.map((step,idx)=> {
+        {this.props.errors.map((step,idx)=> {
           return (
             <div>
               <input type="file" onChange={this.updateFile}/>

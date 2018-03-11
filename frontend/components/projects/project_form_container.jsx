@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     formType = "update";
     project = state.entities.projects[ownProps.match.params.projectId];
   }
-  return {project, formType, steps: state.entities.steps, currentUser: state.session.currentUser };
+  return {project, formType, steps: state.entities.steps, currentUser: state.session.currentUser, errors: state.errors.project };
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -32,6 +32,8 @@ class ProjectForm extends React.Component {
 
     if (file) {
       fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
     }
   }
 
@@ -58,7 +60,9 @@ class ProjectForm extends React.Component {
     let formData = new FormData();
     formData.append('project[title]', this.state.title);
     formData.append('project[body]', this.state.body);
-    formData.append("project[image]", this.state.imageFile);
+    if (this.state.imageFile) {
+      formData.append("project[image]", this.state.imageFile);
+    }
     e.preventDefault();
     this.props.createProject(formData).then((project) => {
       return this.props.history.replace(`/projects/${project.payload.project.id}/edit`);
@@ -81,28 +85,29 @@ class ProjectForm extends React.Component {
   }
 
   displayImage() {
-    if (this.props.formType === "update" && this.state.imageFile === null && this.props.project) {
+    if (this.props.formType === "update" && this.state.imageFile === null) {
       return <img src={this.props.project.image} />
     } else if (this.state.imageUrl) {
-      return <img src={this.state.imageUrl}
-        className="project-form__img-main" />;
+      return <img src={this.state.imageUrl}/>;
     } else {
       return (
-        <h3 className="project-form__img-upload-text">
-          <i className="fas fa-plus"></i> Click To Add Title Image
-        </h3>
+          <p>Click To Add Images</p>
       );
     }
   }
 
   render() {
+    // debugger
     return (
       <div>
+        {this.props.errors.map((err)=> {
+          return <li>{err}</li>;
+        })}
         <input type="file" onChange={this.updateFile}/>
         <input type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
         <input type="text" value={this.state.body} placeholder="Body" onChange={this.update('body')}/>
-        {this.renderButton()}
         {this.displayImage()}
+        {this.renderButton()}
       </div>
     );
   }

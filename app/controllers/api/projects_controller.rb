@@ -17,6 +17,9 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.author_id = current_user.id
+    if !@project.image
+      render json: ["image can't be blank"], status: 422
+    end
     if @project.save
       render :show
     else
