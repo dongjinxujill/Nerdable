@@ -60,13 +60,12 @@ class StepForm extends React.Component {
   }
 
   renderStepImage() {
-    debugger
     if (this.state.imageUrl) {
       return <img className="create-step-image-show" src={this.state.imageUrl}/>;
     } else if (this.state.image) {
       return <img className="create-step-image-show" src={this.state.image} />;
     } else {
-      return (<p className="create-step-text-show"><i className="fas fa-arrow-down"></i>&ensp;Click To 222 Images</p>);
+      return (<p className="create-step-text-show"><i className="fas fa-arrow-down"></i>&ensp;Click To Add Images</p>);
     }
   }
 

@@ -115,7 +115,7 @@ class ProjectForm extends React.Component {
           <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile}/>
         </label>
         {this.props.errors.map((err)=> {
-          return <li>{err}</li>;
+          return <li className="create-project-error">{err}</li>;
           })}
         {this.renderButton()}
       </div>

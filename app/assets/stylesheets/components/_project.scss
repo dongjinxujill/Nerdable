@@ -165,7 +165,7 @@ label {
 }
 
 .create-project-image-container {
-
+  margin-bottom: 20px;
 }
 
 .fa-search {
@@ -174,6 +174,7 @@ label {
 .create-project-submit{
   display: block;
   margin-left: 5px;
+  margin-right: 10px;
   float: right;
   background-color: #e86c00;
   border-color: #cf6000;
@@ -184,4 +185,11 @@ label {
   font-size: 14px;
   padding: 6px 12px;
   margin:9px;
+}
+
+.create-project-error{
+  list-style-type: none;
+  color: black;
+  font-size: 700;
+  margin: 10px 0px;
 }
