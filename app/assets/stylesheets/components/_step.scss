@@ -33,9 +33,9 @@
 .step-inputfile{
   display: none;
 }
+
 .add-step-button{
   border-color: #dedede;
-  float: center;
   margin-top: 50px;
   z-index: 100;
   color: #333;
@@ -45,6 +45,7 @@
   background-color: #f6f6f6;
   margin-bottom: 50px;
   border: 1px solid #dedede;
+  margin-left: 100px;
 }
 
 .fa-arrow-down{

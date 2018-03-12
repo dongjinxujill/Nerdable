@@ -4,7 +4,7 @@
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .write-project-button {
@@ -18,6 +18,7 @@
   line-height: 1.42857;
   display: inline-block;
   padding: 6px 12px;
+  margin-top: 5px;
 }
 
 .li-project-button{
@@ -30,13 +31,12 @@
   font-weight: 700;
   color: #555;
   letter-spacing: 2px;
+  margin-left: 20px;
 }
 
 .main-title {
 }
 
-.header-link {
-}
 .login-signup {
   color: gray;
   position: relative;
@@ -68,15 +68,52 @@
   color: #ccc;
 }
 
-.header-button {
-  font-size: 12px;
-  border: 2px solid orange;
-  border-radius: 2px;
-  background-color: orange;
+.dropbtn {
+  background-color: transparent;
+  color: #777;
+  font-size: 16px;
+  border: none;
+  padding: 16px;
+  padding-right: 150px;
+  border-radius: 8px;
 }
-.header-button:hover{
-  background-color: orange;
-  cursor: pointer;
-  border-radius: 2px;
+
+.dropdown {
+  right: 0;
+  left: auto;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  z-index: 1;
+    border-radius: 8px;
+
+}
+
+.dropdown-content a {
+  color: #777;
+  padding: 4px 8px;
   text-decoration: none;
+  display: block;
+  min-width: 160px;
+  border-radius: 8px;
+
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+
+.fa-sort-down{
+  margin-bottom: 3px;
 }

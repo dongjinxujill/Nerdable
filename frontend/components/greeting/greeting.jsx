@@ -11,8 +11,13 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
-    <p className="header-name">Hi, {currentUser.username}!</p>
-    <button className="header-button" onClick={logout}>Log Out</button>
+    <div class="dropdown">
+      <button class="dropbtn">{currentUser.username}&nbsp;<i className="fas fa-sort-down"></i></button>
+      <div class="dropdown-content">
+        <a><button className="header-button" onClick={logout}>Log Out</button></a>
+        <a><Link className="header-link" to="/projects/new">New Project</Link></a>
+      </div>
+    </div>
 	</hgroup>
 );
 
