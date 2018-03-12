@@ -26,6 +26,8 @@ export const updateStep = step => (
   $.ajax({
     method: "PATCH",
     url: `/api/steps/${step.id}`,
+    contentType: false,
+    processData: false,
     data: { step }
   })
 );

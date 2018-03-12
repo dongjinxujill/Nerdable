@@ -6,6 +6,7 @@ import StepFormContainer from '../steps/step_form_container';
 class ProjectForm extends React.Component {
 
   constructor(props) {
+    // debugger
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderImage = this.renderImage.bind(this);
@@ -22,6 +23,10 @@ class ProjectForm extends React.Component {
       this.props.fetchProject(this.props.match.params.projectId).then(project =>
         {this.setState({body: this.state.body,title: this.state.title, imageFile: this.state.image})});
     }
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState(nextProps.project);
   }
 
   componentWillUnmount(){
@@ -41,12 +46,14 @@ class ProjectForm extends React.Component {
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
+
   }
 
+
+
   update(field) {
-    let that = this;
     return (e) => {
-      that.setState({[field]: e.target.value});
+      this.setState({[field]: e.target.value});
     };
   }
 
@@ -95,12 +102,13 @@ class ProjectForm extends React.Component {
   renderImage() {
     if (this.state.imageUrl) {
       return <img className="create-project-image-show" src={this.state.imageUrl}/>;
-    } else if (this.state.image) {
-      return <img className="create-project-image-show" src={this.state.image} />;
+    } else if (this.props.imageUrl) {
+      return <img className="create-project-image-show" src={this.props.imageUrl} />;
     } else {
       return (<p className="create-project-text-show"><i className="fas fa-plus"></i>&ensp;Click To Add Images</p>);
     }
   }
+
   clearError(){
     if (this.state.title !== "" && this.state.body !== "" && this.state.imageFile !== null){
       return this.props.clearProjectErrors();

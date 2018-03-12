@@ -3,12 +3,12 @@ import StepForm from './step_form';
 import {createStep,deleteStep, clearStepErrors
 } from '../../actions/steps_actions';
 
-const msp = (state, ownProps) => ({
-  // debugger
-  projectId: ownProps.projectId,
-  steps: Object.values(ownProps.steps),
-  errors: state.errors.step
-});
+const msp = (state, ownProps) => {
+  const steps = Object.values(ownProps.steps);
+  return {projectId: ownProps.projectId,
+  errors: state.errors.step,
+  steps};
+};
 
 const mdp = dispatch => ({
   createStep: step => dispatch(createStep(step)),

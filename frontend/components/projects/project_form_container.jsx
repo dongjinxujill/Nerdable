@@ -4,16 +4,16 @@ import ProjectForm from './project_form';
 import { createProject,fetchProject, updateProject, clearProjectErrors} from '../../actions/projects_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let formType, project;
-
+  let formType, project, imageUrl;
   if (ownProps.match.path === "/projects/new"){
     formType = "create";
     project = {title: "", body: "", imageFile: null, imageUrl:null};
   } else{
     formType = "update";
-    project = state.entities.projects[ownProps.match.params.projectId];
+    project = state.entities.projects[ownProps.match.params.projectId] ||{title: "", body: "", imageFile: null, imageUrl:null};
+    imageUrl = project.imageUrl;
   }
-  return {project, formType, steps: state.entities.steps, currentUser: state.session.currentUser, errors: state.errors.project };
+  return {project, formType, steps: state.entities.steps, currentUser: state.session.currentUser, errors: state.errors.project, imageUrl };
 };
 
 const mapDispatchToProps = (dispatch) => {

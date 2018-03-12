@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_attached_file :image, default_url: "missing.png"
+  has_attached_file :image, default_url: lambda { |image| ActionController::Base.helpers.asset_path('work.png') }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token

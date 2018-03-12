@@ -29,6 +29,7 @@
 
   def update
     @project = Project.find(params[:id])
+    debugger
     if @project.author_id != current_user.id
       render json: ["you are not authorized"], status: 403
     elsif @project.update(project_params)

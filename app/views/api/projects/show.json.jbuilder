@@ -1,6 +1,7 @@
 json.project do
   json.extract! @project, :id, :title, :body, :author_id, :image
   json.createdAt @project.created_at.to_date
+  json.imageUrl @project.image.url
 
   json.steps do
     @project.steps.each do |step|

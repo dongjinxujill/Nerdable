@@ -22,6 +22,7 @@ class StepForm extends React.Component {
   }
 
   updateFile(e){
+    debugger
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function () {
@@ -53,7 +54,9 @@ class StepForm extends React.Component {
     formData.append('step[title]', this.state.title || '');
     formData.append('step[project_id]', this.props.projectId);
     formData.append("step[step_number]", stepNumber);
+    debugger
     if (this.state.imageFile) {
+      debugger
       formData.append("step[image]", this.state.imageFile);
     }
     this.props.createStep(formData);
@@ -62,15 +65,14 @@ class StepForm extends React.Component {
   renderStepImage() {
     if (this.state.imageUrl) {
       return <img className="create-step-image-show" src={this.state.imageUrl}/>;
-    } else if (this.state.image) {
-      return <img className="create-step-image-show" src={this.state.image} />;
+    } else if (this.state.steps[this.state.steps.length-1].image) {
+      return <img className="create-step-image-show" src={this.state.steps[this.state.steps.length-1].image} />;
     } else {
       return (<p className="create-step-text-show"><i className="fas fa-arrow-down"></i>&ensp;Click To Add Images</p>);
     }
   }
 
   render(){
-    // debugger
     return (
       <div>
         {this.state.steps.map((step,idx)=> {
@@ -79,8 +81,8 @@ class StepForm extends React.Component {
               {this.props.errors.map((err)=> {
                 return <li className="create-step-error">{err}</li>;
               })}
-              <label className="step-label" for="file">{this.renderStepImage()}
-                <input className="step-inputfile" id="file" type="file" onChange={this.updateFile}/>
+              <label className="step-label" for="step-file">{this.renderStepImage()}
+                <input className="step-inputfile" id="step-file" type="file" onChange={this.updateFile}/>
               </label>
               <Link to={`/projects/${this.props.projectId}/steps/${step.id}/edit`}>
                 <p className="create-step-number">Step {idx}: {step.title}</p>

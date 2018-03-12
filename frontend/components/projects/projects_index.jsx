@@ -1,11 +1,32 @@
 import React from 'react';
-// import ProjectsIndexItem from './projects_index_item';
 import { Link } from 'react-router-dom';
+import ProjectIndexItem from './project_index_item';
 
 class ProjectsIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {search: ''};
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchAllProjects();
+  }
+
+  update(field){
+    return (e)=>{
+      e.preventDefault();
+      this.setState({[field]: e.target.value});
+    };
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    let filteredProjects = this.props.projects.filter((project) => {
+      return project.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+    });
   }
 
 
@@ -13,11 +34,11 @@ class ProjectsIndex extends React.Component {
     // debugger
     return (
       <div className="projects-index">
-        <div className="container">
-          <form className="makeit-searchform">
+        <div className="container" onSubmit={this.handleSubmit}>
+          <form className="makeit-searchform" >
             <span className="title">Let's Make</span>
-            <div className="makeit-searchfield">potential search bar</div>
-            <i className="fas fa-search"></i>
+            <div className="makeit-searchfield"><input onChange={this.update("search")} placeholder="search"/></div>
+            <button><li className="fas fa-search"></li></button>
           </form>
         </div>
         <ul className="project">
