@@ -10,6 +10,16 @@
     end
   end
 
+  def search
+    if params[:query].present?
+      @projects = Project.where('title ~ ?', params[:query])
+    else
+      @projects = Project.none
+    end
+
+    render :search
+  end
+
   def index
     @projects = Project.all
   end

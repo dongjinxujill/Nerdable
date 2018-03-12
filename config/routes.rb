@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy, :show]
-    resources :projects, except: [:new, :edit]
+    resources :projects, except: [:new, :edit] do
+      get "search", on: :collection
+    end
     resources :steps, except: [:new, :edit]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,3 +1,11 @@
+export const fetchSearchedProjects = (query) => {
+  return $.ajax({
+    url: '/api/projects/search',
+    method: 'GET',
+    data: {query}
+  });
+};
+
 export const fetchAllProjects = () => (
   $.ajax({
     method: 'GET',
