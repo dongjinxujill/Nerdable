@@ -13,7 +13,11 @@ class ProjectsIndex extends React.Component {
         <div className="container">
           <form className="makeit-searchform" >
             <span className="title">Let's Make</span>
-            <div className="makeit-searchfield"></div>
+            <div id="makeit-searchfield">
+              <div className="dummy-input">
+                <p className="animation">KNIFE</p>
+              </div>
+            </div>
             <button><li className="fas fa-search"></li></button>
           </form>
         </div>

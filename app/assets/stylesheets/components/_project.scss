@@ -33,13 +33,45 @@
   text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
   padding: 0 20px;
 }
-.makeit-searchfield{
+
+@keyframes type{
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.animation{
+ margin-top: 50px;
+}
+.dummy-input p{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
   font-size: 30px;
-  padding: 40px 20px 0px 20px;
+  animation:
+    type 2s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+#makeit-searchfield{
+  top: 0;
+  width: 200px;
+  height: 50px;
+  line-height: 75px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-bottom: 5px solid white;
+  margin-top: 20px;
 }
 
 .fa-search{
-  padding: 40px 20px 0px 20px;
+  padding: 10px 20px 0px 20px;
   font-size: 50px;
 }
 
@@ -48,9 +80,18 @@
   margin-bottom: 20px;
 }
 
-.each-project-main{
+
+.each-project-show{
   display: inline-block;
   list-style-type: none;
+  position: relative;
+  width: 306px;
+  height: 306px;
+  margin: 30px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.15);
+  border: 1px solid rgba(0,0,0,.1);
+  box-sizing: border-box;
 }
 
 .project-main-page{
@@ -61,12 +102,13 @@
 
 }
 
-.project-image {
-  width: 324px;
+.project-image img {
+  width: 242px;
   border: 0;
-  vertical-align: baseline;
   width: 100px;
   list-style-type: none;
+  height: auto;
+  vertical-align: middle;
 
 }
 
@@ -83,6 +125,13 @@
 }
 
 .project-show{
+
+}
+
+
+.each-project-main{
+  position: absolute;
+
 }
 
 .project-not-found{

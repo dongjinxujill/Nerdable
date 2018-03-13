@@ -14,7 +14,7 @@ class ProjectsSearch extends React.Component {
       // debugger
       return this.props.projects.map((project)=>{
         return (
-          <span><ProjectIndexItem project={project} currentUser={this.props.currentUser}/></span>
+          <span className="each-project-show"><ProjectIndexItem project={project} currentUser={this.props.currentUser}/></span>
         );
       });
     } else {
