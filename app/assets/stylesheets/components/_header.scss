@@ -117,3 +117,38 @@
 .fa-sort-down{
   margin-bottom: 3px;
 }
+
+.search-login{
+  display: flex;
+  justify-content: space-between;
+}
+.search-form{
+
+}
+
+.search-input{
+  width: 130px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 4px 0 0 4px;
+  padding: 4px 6px;
+  border: 1px solid black;
+}
+
+.search-button{
+  // margin-top: 20px;
+}
+
+
+#fa-search-header{
+  // background-position: -51px -1180px;
+  width: 18px;
+  height: 19px;
+  display: inline-block;
+  padding: 7px;
+  border-radius: 0 4px 4px 0;
+  background-color: #c8c8c8;
+  border-color: #ccc;
+  line-height: normal;
+  margin-top: 10px;
+}

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import {RECEIVE_ALL_PROJECTS,RECEIVE_PROJECT,REMOVE_PROJECT
+import {RECEIVE_ALL_PROJECTS,RECEIVE_PROJECT,REMOVE_PROJECT, RECEIVE_SEARCHED_PROJECTS
 } from '../../actions/projects_actions';
 
 const projectsReducer = (state = {}, action) => {

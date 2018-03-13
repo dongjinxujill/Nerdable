@@ -1,5 +1,6 @@
 json.array!(@projects) do |project|
+  # debugger
   json.set! project.id do
-    json.(project, *Project.column_names)
+    json.extract! project, :id, :title, :body, :author_id, :image
   end
 end

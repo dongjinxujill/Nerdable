@@ -5,6 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Greeting extends React.Component{
   constructor(props){
+    // debugger
     super(props);
     this.state = {search: ''};
     this.update = this.update.bind(this);
@@ -27,9 +28,9 @@ class Greeting extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     this.props.fetchSearchedProjects(this.state.search).then(()=>{
+      this.setState({search: ""});
       this.props.history.push("/projects/search");
     });
-    this.setState({search: ""});
   }
 
   renderOnRightSide(){
@@ -57,13 +58,12 @@ class Greeting extends React.Component{
   }
 
  render(){
+   // debugger
    return (
-     <div>
-       <form onSubmit={this.handleSubmit}>
-         <input type='text' value={this.state.search} placeholder="search here" onChange={this.update('search')}/>
-         <button>
-           search click button
-         </button>
+     <div className="search-login">
+       <form className="search-form" onSubmit={this.handleSubmit}>
+         <input className="search-input" type='text' value={this.state.search} placeholder="Let's Make..." onChange={this.update('search')}/>
+         <button className="search-button"><i class="fas fa-search" id="fa-search-header"></i></button>
        </form>
        {this.renderOnRightSide()}
      </div>

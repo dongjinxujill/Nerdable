@@ -27,7 +27,12 @@
 }
 
 .create-step-image-show{
-
+  width: 40%;
+  height: 50px;
+  align-items: center;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .step-inputfile{

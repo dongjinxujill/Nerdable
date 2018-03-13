@@ -12,9 +12,10 @@ class ProjectsSearch extends React.Component {
 
   showResult(){
     if (this.state.length){
-      debugger
       this.state.map((project)=>{
-        return <li><ProjectIndexItem project={project}/></li>;
+        return (
+          <li><ProjectIndexItem project={Object.values(project)}/></li>
+        );
       });
     } else {
       return <p>not found...</p>;
@@ -29,4 +30,4 @@ class ProjectsSearch extends React.Component {
 }
 
 
-export default ProjectsSearch;
+export default withRouter(ProjectsSearch);

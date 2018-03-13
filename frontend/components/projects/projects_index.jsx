@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProjectsSearch from './projects_search';
 
 class ProjectsIndex extends React.Component {
 
@@ -11,7 +10,6 @@ class ProjectsIndex extends React.Component {
   render() {
     return (
       <div className="projects-index">
-        <ProjectsSearch projects={this.props.projects}/>
         <div className="container">
           <form className="makeit-searchform" >
             <span className="title">Let's Make</span>

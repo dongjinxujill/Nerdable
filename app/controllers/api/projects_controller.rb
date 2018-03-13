@@ -11,13 +11,9 @@
   end
 
   def search
-    if params[:query].present?
-      @projects = Project.where('title ~ ?', params[:query])
-    else
-      @projects = Project.none
+    if params[:query]
+      @projects = Project.where("lower(title) LIKE ?", "%#{params[:query]}%").all
     end
-
-    render :search
   end
 
   def index

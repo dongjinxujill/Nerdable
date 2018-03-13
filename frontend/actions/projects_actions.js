@@ -12,9 +12,9 @@ const receiveAllProjects = (payload) => ({
   payload
 });
 
-const receiveSearchedProjects = (projects) => ({
+const receiveSearchedProjects = (payload) => ({
   type: RECEIVE_SEARCHED_PROJECTS,
-  projects
+  payload
 });
 const receiveProject = (payload) => ({
   type: RECEIVE_PROJECT,
@@ -45,11 +45,10 @@ export const fetchAllProjects = () => dispatch => (
 export const fetchSearchedProjects = (query) => dispatch => {
   return (
     ProjectsApiUtil.fetchSearchedProjects(query).then(
-      (projects) => dispatch(receiveSearchedProjects(projects))
+      (payload) => dispatch(receiveSearchedProjects(payload))
     )
   );
 };
-
 
 export const fetchProject = (id) => dispatch => (
   ProjectsApiUtil.fetchProject(id).then(

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import merge from 'lodash/merge';
 
 class StepItem extends React.Component {
   constructor(props) {
@@ -23,18 +23,21 @@ class StepItem extends React.Component {
   }
 
   handleSubmit() {
+    // debugger
     this.props.updateStep(Object.assign({}, this.state, { id: this.props.step.id })).then(() => {
       return this.props.history.replace(`/projects/${this.props.projectId}/edit`);
     });
   }
 
   update(field) {
+    // debugger
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
   }
 
   render() {
+    // debugger
     return (
       <div className="step-item-container">
         <div className="title-body-box">

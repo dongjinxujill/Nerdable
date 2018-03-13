@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 
 const ProjectIndexItem = (props) => {
-  debugger
+  // debugger
     return (
       <li className="each-project-main">
         <Link to={`/projects/${props.project.id}`}>
