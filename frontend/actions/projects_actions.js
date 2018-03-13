@@ -1,6 +1,7 @@
 import * as ProjectsApiUtil from '../util/projects_api_util';
 
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
+export const RECEIVE_SEARCHED_PROJECTS = 'RECEIVE_SEARCHED_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
@@ -11,6 +12,10 @@ const receiveAllProjects = (payload) => ({
   payload
 });
 
+const receiveSearchedProjects = (projects) => ({
+  type: RECEIVE_SEARCHED_PROJECTS,
+  projects
+});
 const receiveProject = (payload) => ({
   type: RECEIVE_PROJECT,
   payload
@@ -37,11 +42,13 @@ export const fetchAllProjects = () => dispatch => (
   )
 );
 
-export const fetchSearchedProjects = (query) => dispatch =>(
-  ProjectsApiUtil.fetchSearchedProjects(query).then(
-    projects => dispatch(receiveAllProjects(projects))
-  )
-);
+export const fetchSearchedProjects = (query) => dispatch => {
+  return (
+    ProjectsApiUtil.fetchSearchedProjects(query).then(
+      (projects) => dispatch(receiveSearchedProjects(projects))
+    )
+  );
+};
 
 
 export const fetchProject = (id) => dispatch => (

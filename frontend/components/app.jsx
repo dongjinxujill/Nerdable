@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
-// import ProjectIndexItem from './projects/project_index_item';
+import ProjectsSearch from './projects/projects_search_container';
 
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
@@ -35,6 +35,7 @@ const App = () => (
         <GreetingContainer />
       </header>
       <Switch>
+        <Route exact path="/projects/search" component={ProjectsSearch}/>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/projects/new" component={ProjectForm}/>
