@@ -143,8 +143,12 @@
 }
 
 .project-show-step-image{
-
-
+  width: 250px;
+  height: 250px;
+  // display: inline-block;
+  margin-left: 500px;
+  align-items: center;
+  justify-content: center;
 }
 
 .create-project-form{
