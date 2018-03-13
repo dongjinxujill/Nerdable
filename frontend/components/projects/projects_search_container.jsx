@@ -3,8 +3,10 @@ import ProjectsSearch from './projects_search';
 import { fetchSearchedProjects } from '../../actions/projects_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   return {
-    projects: Object.values(state.entities.search)
+    projects: state.entities.search,
+    currentUser:state.entities.users
   };
 };
 

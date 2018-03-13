@@ -5,20 +5,20 @@ import ProjectIndexItem from './project_index_item';
 class ProjectsSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = Object.values(this.props.projects);
     this.showResult = this.showResult.bind(this);
   }
 
 
   showResult(){
-    if (this.state.length){
-      this.state.map((project)=>{
+    if (this.props.projects.length){
+      // debugger
+      return this.props.projects.map((project)=>{
         return (
-          <li><ProjectIndexItem project={Object.values(project)}/></li>
+          <span><ProjectIndexItem project={project} currentUser={this.props.currentUser}/></span>
         );
       });
     } else {
-      return <p>not found...</p>;
+      return <p className="project-not-found">project not found...</p>;
     }
   }
 

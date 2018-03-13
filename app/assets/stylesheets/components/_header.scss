@@ -73,9 +73,10 @@
   color: #777;
   font-size: 16px;
   border: none;
-  padding: 16px;
-  padding-right: 150px;
+  padding-top: 10px;
+  padding-right: 100px;
   border-radius: 8px;
+  margin-left: 60px;
 }
 
 .dropdown {
@@ -127,16 +128,23 @@
 }
 
 .search-input{
-  width: 130px;
-  height: 24px;
+  font-size: 14px;
+  width: 115px;
+  height: 23px;
   display: inline-block;
   border-radius: 4px 0 0 4px;
   padding: 4px 6px;
-  border: 1px solid black;
+  margin-top: 16px;
+  border: 1px solid #ccc;
 }
 
 .search-button{
-  // margin-top: 20px;
+  float: right;
+  padding-top: 6px;
+  border: none;
+  margin-right: 16px;
+  font-size: 17px;
+  color: white;
 }
 
 

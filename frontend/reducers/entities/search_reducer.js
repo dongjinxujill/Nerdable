@@ -6,7 +6,7 @@ const searchReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SEARCHED_PROJECTS:
-      return merge({}, state, action.payload);
+      return action.payload;
     default:
       return state;
   }

@@ -14,10 +14,6 @@ class Greeting extends React.Component{
 
   }
 
-  // componentWillMount(){
-  //   this.props.fetchSearchedProjects(this.state.search);
-  // }
-
   update(field){
     return (e)=>{
       e.preventDefault();
@@ -62,7 +58,7 @@ class Greeting extends React.Component{
    return (
      <div className="search-login">
        <form className="search-form" onSubmit={this.handleSubmit}>
-         <input className="search-input" type='text' value={this.state.search} placeholder="Let's Make..." onChange={this.update('search')}/>
+         <input className="search-input" type='text' value={this.state.search} placeholder="Let's Make ..." onChange={this.update('search')}/>
          <button className="search-button"><i class="fas fa-search" id="fa-search-header"></i></button>
        </form>
        {this.renderOnRightSide()}

@@ -50,6 +50,7 @@
 
 .each-project-main{
   display: inline-block;
+  list-style-type: none;
 }
 
 .project-main-page{
@@ -65,12 +66,15 @@
   border: 0;
   vertical-align: baseline;
   width: 100px;
+  list-style-type: none;
 
 }
 
 .project-title{
   padding: 5px;
   font-weight: 700;
+  list-style-type: none;
+
 }
 
 .project-author{
@@ -79,6 +83,15 @@
 }
 
 .project-show{
+}
+
+.project-not-found{
+  padding: 50px;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  line-height: 20px;
+
 }
 
 .project-show-title{
