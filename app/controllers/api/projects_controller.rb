@@ -6,7 +6,7 @@
     if @project
       render :show
     else
-      render json: ["non existing project"], status: 404
+      render json: ["project doesn't exist"], status: 404
     end
   end
 
@@ -24,7 +24,7 @@
     @project = Project.new(project_params)
     @project.author_id = current_user.id
     if !@project.image
-      render json: ["image can't be blank"], status: 422
+      render json: ["Image can't be blank"], status: 422
     end
     if @project.save
       render :show
@@ -37,7 +37,7 @@
     @project = Project.find(params[:id])
     # debugger
     if @project.author_id != current_user.id
-      render json: ["you are not authorized"], status: 403
+      render json: ["not authorized to update project"], status: 403
     elsif @project.update(project_params)
       render :show
     else
@@ -51,7 +51,7 @@
        @project.destroy
        render :show
      else
-       render json: ["you are not authorized"], status: 403
+       render json: ["not authorized to destroy project"], status: 403
      end
    end
 
