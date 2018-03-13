@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentForm from '../comments/comment_form_container';
+import CommentsIndex from '../comments/comments_index_container';
 
 class ProjectShow extends React.Component {
 
@@ -11,10 +13,13 @@ class ProjectShow extends React.Component {
   // componentWillReceiveProps(nextProps) {
   //   if (this.props.projectId !== nextProps.match.params.projectId) {
   //     this.props.fetchProject(nextProps.match.params.projectId);
+  //   } else {
+  //     this.props.fetchProject(this.props.match.params.projectId);
   //   }
   // }
 
   render() {
+    // debugger
     const { project } = this.props;
     if (!project) {
       return <div>Loading...</div>;
@@ -36,6 +41,8 @@ class ProjectShow extends React.Component {
             );
           })}
         </div>
+        <CommentForm project={project}/>
+        <CommentsIndex project={project}/>
       </div>
     );
   }

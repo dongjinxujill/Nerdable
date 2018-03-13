@@ -16,6 +16,7 @@ json.project do
       json.set! comment.id do
         json.extract! comment, :id, :body, :author_id
       end
+    end
   end
 end
 

@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
-import ProjectsSearch from './projects/projects_search_container';
+import ProjectsSearchResult from './projects/projects_search_result_container';
 
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
@@ -19,6 +19,9 @@ import ProjectShowContainer from './projects/project_show_container';
 import ProjectForm from './projects/project_form_container';
 
 import StepItemContainer from './steps/step_item_container';
+
+// import CommentFormContainer from './comemnts/comment_form_container';
+
 import Footer from './footer/footer';
 
 
@@ -35,7 +38,7 @@ const App = () => (
         <GreetingContainer />
       </header>
       <Switch>
-        <Route exact path="/projects/search" component={ProjectsSearch}/>
+        <Route exact path="/projects/search" component={ProjectsSearchResult}/>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/projects/new" component={ProjectForm}/>

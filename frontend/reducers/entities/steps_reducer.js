@@ -1,7 +1,5 @@
 import {RECEIVE_STEP,DELETE_STEP} from '../../actions/steps_actions';
-import {
-  RECEIVE_PROJECT
-} from '../../actions/projects_actions';
+import {RECEIVE_PROJECT} from '../../actions/projects_actions';
 import merge from 'lodash/merge';
 
 const stepsReducer = (state = {}, action) => {

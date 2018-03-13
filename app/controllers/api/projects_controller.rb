@@ -3,6 +3,7 @@
 
   def show
     @project = Project.find(params[:id])
+    # debugger
     if @project
       render :show
     else

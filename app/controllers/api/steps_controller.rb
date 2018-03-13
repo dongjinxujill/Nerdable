@@ -1,6 +1,10 @@
 class Api::StepsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
+  def index
+    @steps = Step.where(project_id: params[:project_id])
+  end
+
   def create
     @step = Step.new(step_params)
     if @step.save

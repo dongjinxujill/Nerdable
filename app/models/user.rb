@@ -7,11 +7,14 @@ class User < ApplicationRecord
 
   has_attached_file :image, default_url: lambda { |image| ActionController::Base.helpers.asset_path('work.png') }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-
   after_initialize :ensure_session_token
 
   has_many :projects,
   class_name: :Project,
+  foreign_key: :author_id
+
+  has_many :comments,
+  class_name: :Comment,
   foreign_key: :author_id
 
   def self.find_by_credentials(username, password)
@@ -38,6 +41,7 @@ class User < ApplicationRecord
   private
 
   def ensure_session_token
+    # debugger
     generate_unique_session_token unless self.session_token
   end
 

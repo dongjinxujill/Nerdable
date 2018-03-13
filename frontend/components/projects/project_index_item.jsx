@@ -9,7 +9,6 @@ const ProjectIndexItem = (props) => {
         <Link to={`/projects/${props.project.id}`}>
           <li className="project-image"><img src={props.project.image}/></li>
           <li className="project-title">{props.project.title}</li>
-          <li className="project-author">By: {Object.values(props.currentUser)[0].username}</li>
         </Link>
       </div>
     );
