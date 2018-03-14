@@ -11,6 +11,10 @@ class CommentForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     // this.handleErrors = this.handleErrors.bind(this);
   }
+  //
+  // componentDidMount(){
+  //   this.setState({body: "", project_id: this.props.project.id, author_id: this.props.currentUser[0].id});
+  // }
 
   componentWillUnmount(){
     this.props.clearCommentErrors();
@@ -24,7 +28,7 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit(e){
-    // debugger
+
     e.preventDefault();
     this.props.createComment(this.state);
   }

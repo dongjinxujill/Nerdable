@@ -10,7 +10,6 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
     if @comment.save
-
       render :show
     else
       render json: @comment.errors.full_messages, status: 422
@@ -20,7 +19,7 @@ class Api::CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.author_id != current_user.id
-      render json: ["not authorized to edit comment"], status: 422
+      render json: ["not authorized to edit comment"], status: 403
     elsif @comment.update(comment_params)
       render :show
     else
@@ -31,7 +30,7 @@ class Api::CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.author_id != current_user.id
-      render json: ["not authorized to delete comment"], status: 422
+      render json: ["not authorized to delete comment"], status: 403
     else
       @comment.destroy
       render :show

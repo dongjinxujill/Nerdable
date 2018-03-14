@@ -25,7 +25,7 @@
     @project = Project.new(project_params)
     @project.author_id = current_user.id
     if !@project.image
-      render json: ["Image can't be blank"], status: 422
+      render json: ["Image can't be blank"], status: 404
     end
     if @project.save
       render :show

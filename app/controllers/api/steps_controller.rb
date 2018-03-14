@@ -21,7 +21,7 @@ class Api::StepsController < ApplicationController
   def update
     @step = Step.find(params[:id])
     if @step.project.author_id != current_user.id
-      render json: ["not authorized"], status: 403
+      render json: ["not authorized"], status: 401
     end
     if @step.update(step_params)
       render :show

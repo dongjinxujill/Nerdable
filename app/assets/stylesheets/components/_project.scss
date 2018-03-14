@@ -42,7 +42,7 @@
 }
 
 .animation{
- margin-top: 50px;
+ height: 50px;
 }
 .dummy-input p{
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -151,6 +151,7 @@
   color: #333;
   font-weight: 700;
   font-size: 30px;
+  padding-top: 20px;
 }
 
 .project-show-author{
@@ -204,6 +205,7 @@
   color: #555;
   word-wrap: break-word;
   margin-left: 200px;
+  margin-right: 200px;
 }
 
 .project-show-step-image{

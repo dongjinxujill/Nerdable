@@ -8,6 +8,7 @@ const msp = (state, ownProps) => {
   const project = ownProps.project;
   const currentUser = Object.values(state.entities.users);
   return {
+    comments: project.comments,
     project,
     currentUser,
     // error: state.entities.errors.comment

@@ -21,10 +21,13 @@ const removeComment = (commentId) => ({
   commentId
 });
 
-const receiveCommentErrors = (errors) => ({
-  type: RECEIVE_COMMENT_ERRORS,
-  errors
-});
+const receiveCommentErrors = (errors) => {
+  // debugger
+  return {
+    type: RECEIVE_COMMENT_ERRORS,
+    errors
+  };
+};
 
 export const clearCommentErrors = () => ({
   type: CLEAR_COMMENT_ERRORS
@@ -49,8 +52,10 @@ export const updateComment = comment => dispatch => (
     err => dispatch(receiveCommentErrors(err.responseJSON))
 ));
 
-export const deleteComment = id => dispatch => (
-  CommentsApiUtil.deleteComment(id).then(() => {
-    return dispatch(removeComment(id));
-  })
-);
+export const deleteComment = id => dispatch => {
+  // debugger
+  return CommentsApiUtil.deleteComment(id).then(
+    () => dispatch(removeComment(id)),
+    err => dispatch(receiveCommentErrors(err.responseJSON))
+  );
+};
