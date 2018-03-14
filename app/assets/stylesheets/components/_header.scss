@@ -58,6 +58,15 @@
   color: gray;
   text-align: center;
   margin-top:10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-headshot{
+  border-radius: 250px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
 }
 
 .header-name {
@@ -76,7 +85,6 @@
   padding-top: 10px;
   padding-right: 30px;
   border-radius: 8px;
-  margin-left: 60px;
 }
 
 .dropdown {
@@ -122,7 +130,7 @@
 .search-login{
   display: flex;
   justify-content: space-between;
-  margin-right: 50px;
+  margin-right: 100px;
 }
 .search-form{
 

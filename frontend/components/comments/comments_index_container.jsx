@@ -4,16 +4,24 @@ import { fetchAllComments, deleteComment } from '../../actions/comments_actions'
 
 const mapStateToProps = (state, ownProps) => {
   const project = ownProps.project;
-  const currentUser = state.entities.users;
   // debugger
+  const comments = [];
+  project.comment_ids.map((id)=>{
+    if (state.entities.comments[id]) {
+      return comments.push(state.entities.comments[id]);
+    }
+  });
+
   return {
-    comments: Object.values(project.comments),
-    errors: state.errors.comment
+    currentUser: state.session.currentUser,
+    comments: comments || [],
+    errors: state.errors.comment,
+    users: state.entities.users
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllComments: () => dispatch(fetchAllComments()),
+  fetchAllComments: (projectId) => dispatch(fetchAllComments(projectId)),
   deleteComment: id => dispatch(deleteComment(id))
 });
 

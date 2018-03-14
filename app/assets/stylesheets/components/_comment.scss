@@ -11,6 +11,7 @@
 }
 
 .one-comment{
+  border-top: 1px solid #AAA;
   margin-left: 250px;
   margin-right: 250px;
   position: relative;
@@ -31,11 +32,20 @@
   display: table;
 }
 
+.comment-author-create{
+  display: flex;
+  justify-content:flex-start;
+}
+
 .comment-body{
-  border-top: 1px solid #AAA;
   padding: 20px 20px 0px 20px;
 }
 .comment-author {
+  padding: 10px 20px 0px 20px;
+
+}
+
+.comment-create-at{
   padding: 10px 20px 0px 20px;
 
 }

@@ -2,7 +2,8 @@ json.project do
   json.extract! @project, :id, :title, :body, :author_id, :image
   json.createdAt @project.created_at.to_date
   json.imageUrl @project.image.url
-
+  json.comment_ids @project.comment_ids
+  json.step_ids @project.step_ids
   json.steps do
     @project.steps.each do |step|
       json.set! step.id do
@@ -10,15 +11,25 @@ json.project do
       end
     end
   end
+end
 
+@project.comments.each do |comment|
   json.comments do
-    @project.comments.each do |comment|
-      json.set! comment.id do
-        json.extract! comment, :id, :body, :author_id
-      end
+    json.set! comment.id do
+      json.partial! 'api/comments/comment', comment: comment
+      json.createAt comment.created_at.to_date
     end
   end
 end
+
+json.users do
+  @project.comments.map(&:author).each do |author|
+    json.set! author.id do
+      json.extract! author, :id, :username
+    end
+  end
+end
+
 
 json.user do
   json.partial! 'api/users/user', user: @project.user

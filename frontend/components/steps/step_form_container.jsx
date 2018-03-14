@@ -5,9 +5,8 @@ import {createStep,deleteStep, clearStepErrors
 
 const msp = (state, ownProps) => {
   const steps = Object.values(ownProps.steps);
-  return {projectId: ownProps.projectId,
-  errors: state.errors.step,
-  steps};
+  // debugger
+  return {projectId: ownProps.projectId, errors: state.errors.step, steps};
 };
 
 const mdp = dispatch => ({

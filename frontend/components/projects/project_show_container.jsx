@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProjectShow from './project_show';
 import { fetchProject } from '../../actions/projects_actions';
+import { fetchAllComments } from '../../actions/comments_actions';
 
 const mapStateToProps = (state, ownProps) => {
   // debugger
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchProject: id => dispatch(fetchProject(id))
+  fetchProject: id => dispatch(fetchProject(id)),
+  fetchAllComments: projectId => dispatch(fetchAllComments(projectId))
 });
 
 export default connect(

@@ -34,8 +34,8 @@ export const clearCommentErrors = () => ({
 });
 
 
-export const fetchAllComments = () => dispatch => (
-  CommentsApiUtil.fetchComments().then(comments => {
+export const fetchAllComments = (projectId) => dispatch => (
+  CommentsApiUtil.fetchComments(projectId).then(comments => {
     return dispatch(receiveAllComments(comments));
   })
 );

@@ -2,7 +2,7 @@
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.includes(comments: :author).find(params[:id])
     # debugger
     if @project
       render :show

@@ -28,9 +28,10 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit(e){
-
     e.preventDefault();
-    this.props.createComment(this.state);
+    this.props.createComment(this.state).then(()=>{
+      this.setState({body: ""});
+    });
   }
   //
   // handleErrors(e){
@@ -44,7 +45,7 @@ class CommentForm extends React.Component {
     // debugger
     return (
       <form className="comment-form" onSubmit={this.handleSubmit}>
-        <input className="comment-input" type="text" onChange={this.update("body")} placeholder="Post comment..."/>
+        <input className="comment-input" value={this.state.body} type="text" onChange={this.update("body")} placeholder="Post comment..."/>
         <button className="comment-submit">Post</button>
       </form>
 

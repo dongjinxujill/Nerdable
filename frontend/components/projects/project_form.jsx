@@ -46,17 +46,13 @@ class ProjectForm extends React.Component {
     } else {
       this.setState({ imageUrl: "", imageFile: null });
     }
-
   }
-
-
 
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -119,9 +115,12 @@ class ProjectForm extends React.Component {
     return (
       <div className="create-project-form">
         <input className="create-project-title" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
-        <label className="create-project-image-container" for="file">{this.renderImage()}
-          <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile}/>
-        </label>
+        <div className="image-and-body">
+          <label className="create-project-image-container" for="file">{this.renderImage()}
+            <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile}/>
+          </label>
+          <textarea className="create-project-body" type="text" value={this.state.body} placeholder="Body" onChange={this.update('body')}></textarea>
+        </div>
         {this.props.errors.map((err)=> {
           return <li className="create-project-error">{err}</li>;
           })}

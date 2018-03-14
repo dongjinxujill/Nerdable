@@ -7,8 +7,9 @@ const msp = (state, ownProps) => {
   // debugger
   const project = ownProps.project;
   const currentUser = Object.values(state.entities.users);
+  // debugger
   return {
-    comments: project.comments,
+    commentIds: project.comment_ids,
     project,
     currentUser,
     // error: state.entities.errors.comment

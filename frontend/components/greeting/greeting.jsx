@@ -33,6 +33,7 @@ class Greeting extends React.Component{
     if (this.props.currentUser) {
       return (
         <hgroup className="header-group">
+          <img className="user-headshot" src={this.props.currentUser.image_url} />
           <div class="dropdown">
             <button class="dropbtn">{this.props.currentUser.username}&nbsp;<i className="fas fa-sort-down"></i></button>
             <div class="dropdown-content">

@@ -12,7 +12,7 @@ class StepForm extends React.Component {
   }
 
   componentDidMount(){
-    this.setState({title: 'Click To Edit'});
+    this.setState({title: 'Click To Edit', imageFile: null, imageUrl: null});
   }
 
   componentWillUnmount(){
@@ -32,7 +32,6 @@ class StepForm extends React.Component {
     }
   }
 
-
   componentWillReceiveProps(newProps) {
     if (newProps.steps !== this.props.steps) {
       this.setState({ steps: newProps.steps });
@@ -50,7 +49,7 @@ class StepForm extends React.Component {
 
     let formData = new FormData();
     formData.append('step[body]', this.state.body || '');
-    formData.append('step[title]', this.state.title || '');
+    formData.append('step[title]', '');
     formData.append('step[project_id]', this.props.projectId);
     formData.append("step[step_number]", stepNumber);
     // debugger
