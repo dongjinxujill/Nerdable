@@ -2,6 +2,7 @@ class Api::CommentsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
+    # debugger
     @comments = Comment.where(project_id: params[:project_id])
   end
 
@@ -9,7 +10,8 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
     if @comment.save
-      render :index
+
+      render :show
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -20,7 +22,7 @@ class Api::CommentsController < ApplicationController
     if @comment.author_id != current_user.id
       render json: ["not authorized to edit comment"], status: 422
     elsif @comment.update(comment_params)
-      render :index
+      render :show
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -32,7 +34,7 @@ class Api::CommentsController < ApplicationController
       render json: ["not authorized to delete comment"], status: 422
     else
       @comment.destroy
-      render :index
+      render :show
     end
   end
 

@@ -20,8 +20,6 @@ import ProjectForm from './projects/project_form_container';
 
 import StepItemContainer from './steps/step_item_container';
 
-// import CommentFormContainer from './comemnts/comment_form_container';
-
 import Footer from './footer/footer';
 
 

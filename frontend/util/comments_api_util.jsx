@@ -1,7 +1,7 @@
 export const fetchComments = () => (
   $.ajax({
     method: "GET",
-    url: "/api/steps",
+    url: "/api/comments",
   })
 );
 

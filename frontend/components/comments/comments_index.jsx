@@ -9,13 +9,14 @@ class CommentsIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="all-comments">
+        <p className="comment-count">{this.props.comments.length} Comments</p>
         {this.props.comments.map((comment)=>{
           return (
-            <div>
-              <li>{comment.body}</li>
-              <li>{comment.author_id}</li>
-            </div>
+            <article className="one-comment">
+              <li className="comment-body">{comment.body}</li>
+              <li className="comment-author">posted by: {comment.author_id}</li>
+            </article>
           );
         })}
       </div>

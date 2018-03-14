@@ -5,6 +5,11 @@ import CommentsIndex from '../comments/comments_index_container';
 
 class ProjectShow extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.showComment = this.showComment.bind(this);
+  }
+
   componentDidMount() {
     // debugger
     this.props.fetchProject(this.props.match.params.projectId);
@@ -17,6 +22,12 @@ class ProjectShow extends React.Component {
   //     this.props.fetchProject(this.props.match.params.projectId);
   //   }
   // }
+
+  showComment(){
+    if (this.props.project.comments){
+      return <CommentsIndex project={this.props.project}/>;
+    }
+  }
 
   render() {
     // debugger
@@ -42,7 +53,7 @@ class ProjectShow extends React.Component {
           })}
         </div>
         <CommentForm project={project}/>
-        <CommentsIndex project={project}/>
+        {this.showComment()}
       </div>
     );
   }
