@@ -1,5 +1,6 @@
 .main-main-div {
   background-color: #d4e1e7;
+  height: 100%;
 }
 
 .projects-index {
@@ -347,7 +348,8 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .profile-username{
@@ -404,4 +406,10 @@
 
 .profile-project-delete{
 
+}
+
+.profile-project-not-found{
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
 }

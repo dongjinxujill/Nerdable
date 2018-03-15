@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import CommentForm from '../comments/comment_form_container';
 import CommentsIndex from '../comments/comments_index_container';
 
@@ -8,7 +8,7 @@ class ProjectShow extends React.Component {
   constructor(props){
     super(props);
     this.showComment = this.showComment.bind(this);
-    // this.showStep = this.showStep.bind(this);
+    this.renderUsername = this.renderUsername.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +29,10 @@ class ProjectShow extends React.Component {
   //   }
   // }
 
+  renderUsername(project){
+    return <Link to={`/users/${project.author_id}`} >{this.props.authors[project.author_id].username}</Link>;
+  }
+
   render() {
     const { project } = this.props;
     if (!project) {
@@ -38,7 +42,7 @@ class ProjectShow extends React.Component {
     return (
       <div className="project-show">
         <h1 className="project-show-title">{project.title}</h1>
-        <p className="project-show-author">by {this.props.authors[project.author_id].username}</p>
+        <p className="project-show-author">by {this.renderUsername(project)}</p>
         <p className="project-show-date">Posted: {project.createdAt}</p>
         <img className="project-show-image" src={project.image}/>
         <p className="project-show-body">{project.body}</p>
@@ -60,4 +64,4 @@ class ProjectShow extends React.Component {
   }
 }
 
-export default ProjectShow;
+export default withRouter(ProjectShow);

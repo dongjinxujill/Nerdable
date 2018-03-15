@@ -8,25 +8,25 @@ header {
 
 .login-form-container{
   background-image: url('/assets/session_form_background.jpg');
-  background-size: 1200px;
+  background-size: 100%;
   position:relative;
   overflow-y:auto;
   color: white;
 }
 
 .login-form-box{
-  height: 100%;
+  // height: 100%;
   width: 360px;
+  height: 800px;
   margin-left: 50px;
   postion: relative;
   display: block;
-  height: 545px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
 .login-form{
-  margin-top: 100px;
-  width: 100%;
+  margin-top: 200px;
+  // width: 100%;
   margin-bottom: 0px;
   display: block;
   text-align: center;

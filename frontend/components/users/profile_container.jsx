@@ -6,12 +6,13 @@ import {fetchAllProjects, deleteProject} from '../../actions/projects_actions';
 const msp = (state, ownProps) => {
   const user = state.session.currentUser;
   // debugger
-  const projectIds= state.entities.users[ownProps.match.params.userId].project_ids;
+  let projects;
+  const projectIds = state.entities.users[ownProps.match.params.userId].project_ids;
   const projectRes = [];
   projectIds.map((projectId)=>{
     projectRes.push(state.entities.projects[projectId]);
   });
-  const projects = projectRes || null;
+  projects = projectRes;
   return {user, projects, currentUser: state.session.currentUser};
 };
 

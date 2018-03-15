@@ -7,6 +7,7 @@ const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_PROJECTS:
+    // debugger
       // debugger
       // const projectIds = state[action.payload.user_id].project_ids;
       // projectIds.map((projectId)=>{
@@ -15,7 +16,6 @@ const usersReducer = (state = {}, action) => {
       return merge({}, action.payload.users);
     case RECEIVE_PROJECT:
       return merge({}, state, {[action.payload.user.id]: action.payload.user}, action.payload.users);
-
     case REMOVE_PROJECT:
       // let currState = merge({}, state);
       // Object.values(currState).map((project)=>{
