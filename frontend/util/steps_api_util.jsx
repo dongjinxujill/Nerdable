@@ -1,7 +1,7 @@
-export const fetchSteps = () => (
+export const fetchSteps = (projectId) => (
   $.ajax({
     method: "GET",
-    url: "/api/steps",
+    url: `/api/projects/${projectId}/steps`,
   })
 );
 
@@ -12,23 +12,24 @@ export const fetchStep = id => (
   })
 );
 
-export const createStep = formData => (
+export const createStep = step => (
   $.ajax({
     method: "POST",
     url: "/api/steps",
+    data: {step}
+  })
+);
+
+export const updateStep = (formData, stepId) => {
+  // debugger
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/steps/${stepId}`,
     contentType: false,
     processData: false,
     data: formData
   })
-);
-
-export const updateStep = step => (
-  $.ajax({
-    method: "PATCH",
-    url: `/api/steps/${step.id}`,
-    data: { step }
-  })
-);
+};
 
 export const deleteStep = id => (
   $.ajax({

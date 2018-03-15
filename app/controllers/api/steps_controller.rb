@@ -19,6 +19,7 @@ class Api::StepsController < ApplicationController
   end
 
   def update
+    # debugger
     @step = Step.find(params[:id])
     if @step.project.author_id != current_user.id
       render json: ["not authorized"], status: 401

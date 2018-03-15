@@ -4,11 +4,12 @@ json.project do
   json.imageUrl @project.image.url
   json.comment_ids @project.comment_ids
   json.step_ids @project.step_ids
+end
+
+@project.steps.each do |step|
   json.steps do
-    @project.steps.each do |step|
-      json.set! step.id do
-        json.extract! step, :id, :title, :body, :image, :step_number, :project_id
-      end
+    json.set! step.id do
+      json.extract! step, :id, :title, :body, :image, :step_number, :project_id
     end
   end
 end
@@ -21,6 +22,7 @@ end
     end
   end
 end
+
 
 json.users do
   @project.comments.map(&:author).each do |author|

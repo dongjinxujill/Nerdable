@@ -6,7 +6,7 @@ const stepsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_STEP:
-      return merge({}, state, action.step);
+      return merge({}, state, {[action.step.id]: action.step});
     case RECEIVE_PROJECT:
       return merge({}, action.payload.project.steps);
     case DELETE_STEP:

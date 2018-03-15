@@ -8,9 +8,10 @@ Rails.application.routes.draw do
     resources :projects, except: [:new, :edit] do
       get "search", on: :collection
       resources :comments, only: [:index]
+      resources :steps, only: [:index]
     end
     resources :comments, except:[:new, :edit, :show, :index]
-    resources :steps, except: [:new, :edit]
+    resources :steps, except: [:new, :edit, :index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

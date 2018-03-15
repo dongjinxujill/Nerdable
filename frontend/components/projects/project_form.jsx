@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import StepFormContainer from '../steps/step_form_container';
+// import StepFormContainer from '../steps/step_form_container';
+import StepsIndexContainer from '../steps/steps_index_container';
 
 
 class ProjectForm extends React.Component {
@@ -84,12 +85,11 @@ class ProjectForm extends React.Component {
     if (this.props.formType === "create") {
       return <button className="create-project-submit" onClick={this.handleAddStep}>Add Step</button>;
     } else if (this.props.formType === "update") {
+      debugger
       return (
         <div>
           <button className="create-project-submit" onClick={this.handleSubmit}>Publish</button>
-          <StepFormContainer
-            projectId={this.props.match.params.projectId}
-            steps={this.props.steps}/>
+          <StepsIndexContainer project={this.props.project}/>
         </div>
       );
     }

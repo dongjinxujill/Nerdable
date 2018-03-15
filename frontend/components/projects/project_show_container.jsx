@@ -4,7 +4,6 @@ import { fetchProject } from '../../actions/projects_actions';
 import { fetchAllComments } from '../../actions/comments_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     project: state.entities.projects[ownProps.match.params.projectId],
     authors: state.entities.users,

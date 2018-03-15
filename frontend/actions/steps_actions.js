@@ -30,8 +30,8 @@ export const clearStepErrors = () => ({
   type: CLEAR_STEP_ERRORS
 });
 
-export const fetchAllSteps = () => dispatch => (
-  StepsApiUtil.fetchSteps().then(steps => {
+export const fetchAllSteps = (projectId) => dispatch => (
+  StepsApiUtil.fetchSteps(projectId).then(steps => {
     return dispatch(receiveAllSteps(steps));
   })
 );
@@ -48,8 +48,8 @@ export const createStep = step => dispatch => (
     err => dispatch(receiveStepErrors(err.responseJSON))
 ));
 
-export const updateStep = step => dispatch => (
-  StepsApiUtil.updateStep(step).then(
+export const updateStep = (formData, stepId) => dispatch => (
+  StepsApiUtil.updateStep(formData, stepId).then(
     step => dispatch(receiveStep(step)),
     err => dispatch(receiveStepErrors(err.responseJSON))
 ));
