@@ -24,16 +24,15 @@ class ProjectShow extends React.Component {
 
   render() {
     const { project } = this.props;
-    // debugger
     if (!project) {
       return <div>Loading...</div>;
     }
     return (
       <div className="project-show">
         <h1 className="project-show-title">{project.title}</h1>
-        <img className="project-show-image" src={project.image}/>
         <p className="project-show-author">by {this.props.authors[project.author_id].username}</p>
         <p className="project-show-date">Posted: {project.createdAt}</p>
+        <img className="project-show-image" src={project.image}/>
         <p className="project-show-body">{project.body}</p>
         <div className="all-steps">
           {this.props.steps.map((step,idx)=>{

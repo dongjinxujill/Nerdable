@@ -22,19 +22,19 @@ class ProjectsSearchResult extends React.Component {
   }
 
 
-
   showResult(){
     if (this.props.projects.length){
       // debugger
       return this.props.projects.map((project)=>{
         return (
-          <span className="each-project-show"><ProjectIndexItem project={project}/></span>
+          <span className="each-project-show"><ProjectIndexItem project={project} currentUser={this.props.currentUser} deleteProject={this.props.deleteProject}/></span>
         );
       });
     } else {
       return <p className="project-not-found">project not found...</p>;
     }
   }
+
 
   render(){
     return (

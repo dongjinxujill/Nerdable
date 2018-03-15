@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
+import ProfileContainer from './users/profile_container';
 import ProjectsSearchResult from './projects/projects_search_result_container';
 
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -36,6 +37,7 @@ const App = () => (
         <GreetingContainer />
       </header>
       <Switch>
+        <Route exact path="/user/:userId" component={ProfileContainer}/>
         <Route exact path="/projects/search" component={ProjectsSearchResult}/>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />

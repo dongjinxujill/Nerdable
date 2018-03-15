@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+// import {ProfileContainer} from '../users/profile_container';
 
 
 class Greeting extends React.Component{
@@ -37,6 +37,7 @@ class Greeting extends React.Component{
           <div class="dropdown">
             <button class="dropbtn">{this.props.currentUser.username}&nbsp;<i className="fas fa-sort-down"></i></button>
             <div class="dropdown-content">
+              <Link to={`/users/${this.props.currentUser.id}`}>Profile</Link>
               <a><button className="header-button" onClick={this.props.logout}>Log Out</button></a>
               <a><Link className="header-link" to="/projects/new">New Project</Link></a>
             </div>

@@ -19,6 +19,7 @@ const projectsReducer = (state = {}, action) => {
       project1.step_ids.push(action.step.id);
       return currState;
     case RECEIVE_COMMENT:
+    // debugger
       const curr1 = merge({}, state);
       const project = curr1[action.comment.project_id];
       project.comment_ids.push(action.comment.id);
@@ -36,6 +37,7 @@ const projectsReducer = (state = {}, action) => {
       // const project = curr2[action.commentId]
     case REMOVE_PROJECT:
       const curr3 = merge({}, state);
+      debugger
       delete curr3[action.projectId];
       return curr3;
     default:
