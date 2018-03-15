@@ -9,6 +9,7 @@ class StepEdit extends React.Component {
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderImage = this.renderImage.bind(this);
   }
 
   update(field){
@@ -29,6 +30,14 @@ class StepEdit extends React.Component {
     }
   }
 
+  renderImage() {
+    if (this.state.imageUrl) {
+      return <img className="edit-step-image-show" src={this.state.imageUrl}/>;
+    } else {
+      return (<p className="edit-step-text-show"><i className="fas fa-plus"></i>&ensp;Click To Add Images</p>);
+    }
+  }
+
   handleSubmit(e){
     e.preventDefault();
     let formData = new FormData();
@@ -45,13 +54,15 @@ class StepEdit extends React.Component {
 
   render(){
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.title} onChange={this.update("title")} placeholder="title"/>
-        <input type="text" value={this.state.body} onChange={this.update("body")} placeholder="body"/>
-        <input type="file" onChange={this.updateFile}/>
-        <button>Update</button>
+      <form className="step-item-container" onSubmit={this.handleSubmit}>
+        <input className="step-item-title" type="text" value={this.state.title} onChange={this.update("title")} placeholder={`Step${this.state.step_number} Title`}/>
+        <label className="step-label" for="file-step">{this.renderImage()}
+          <input className="step-inputfile" id="file-step" name="file-step" type="file" onChange={this.updateFile}/>
+        </label>
+        <input className="step-item-body" type="text" value={this.state.body} onChange={this.update("body")} placeholder={`Let's write something for Step ${this.state.step_number}`}/>
+        <button className="step-item-update-button">Update</button>
       </form>
-    )
+    );
   }
 }
 

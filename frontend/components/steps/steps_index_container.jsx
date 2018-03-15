@@ -5,7 +5,7 @@ import { fetchAllSteps, deleteStep, createStep} from '../../actions/steps_action
 const mapStateToProps = (state, ownProps) => {
   const project = ownProps.project;
   const steps = [];
-  debugger
+  // debugger
   project.step_ids.map((id)=>{
     if (state.entities.steps[id]) {
       return steps.push(state.entities.steps[id]);

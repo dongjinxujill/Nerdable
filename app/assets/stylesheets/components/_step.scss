@@ -5,40 +5,70 @@
   margin-top: 30px;
   border-radius: 8px;
   width: 990px;
-  height: 130px;
-  margin-left: 10px;
+  height: 300px;
   display: flex;
   justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px
 }
 
 .step-label{
   color: #AAA;
-  display: inline-block;
+  display: block;
   cursor: pointer;
-  width: 50%;
+  width: 95%;
   font-size: 20px;
-  padding: 40px 0px 10px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  // padding: 40px 0px 10px 0px;
   border: 1px solid #dedede;
   border-radius: 8px;
   background-color: #eee;
-  margin: 10px 0px 0px 10px;
+  margin-top: 10px;
   -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
-  height: 50px;
-}
-
-.create-step-image-show{
-  width: 40%;
-  height: 50px;
-  align-items: center;
-  display: inline-block;
-  flex-direction: column;
-  justify-content: center;
+  // margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 .step-inputfile{
   display: none;
 }
 
+
+
+.create-step-image-show{
+  height: 300px;
+  width: 600px;
+  display: inline-block;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+}
+
+.edit-step-image-show{
+  height: 90%;
+  width: 90%;
+  display: inline-block;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create-step-text-show{
+  padding-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 .add-step-button{
   border-color: #dedede;
   margin-top: 50px;
@@ -50,7 +80,6 @@
   background-color: #f6f6f6;
   margin-bottom: 50px;
   border: 1px solid #dedede;
-  margin-left: 100px;
 }
 
 .fa-arrow-down{
@@ -60,13 +89,13 @@
 .create-step-number{
   font-weight: 700;
   padding-top: 50px;
+  list-style-type: none;
 }
 
 .step-click-to-edit{
   color: #333;
-  // position: relative;
   top: 5px;
-  font-size: 15px;
+  font-size: 22px;
   width: 100%;
   margin-bottom: 10px;
   font-weight: bold;
@@ -77,12 +106,19 @@
 }
 
 .step-delete-button{
+  // display: block;
+  // width: 24px;
+  // height: 24px;
+  // // overflow: hidden;
+  // // position: relative;
+  // margin: 100px 0px 0px 0px;
+}
+
+.fa-trash-alt{
   display: block;
   width: 24px;
-  height: 24px;
-  // overflow: hidden;
-  // position: relative;
-  margin: 100px 0px 0px 0px;
+  margin-top: 250px;
+  margin-right: 10px;
 }
 
 .create-step-error{
@@ -91,13 +127,14 @@
 }
 
 .step-item-container{
-  position: relative;
+  // position: relative;
   width: 800px;
   margin: 30px auto;
-  display:block;
+  // display:block;
   border: 1px solid #ccc;
   background-color:#f6f6f6;
   border-radius: 12px;
+  padding-bottom: 50px;
 }
 
 .title-body-box{
@@ -135,20 +172,20 @@
   line-height: 1.5rem;
 
 }
-.step-button{
-  display:flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
+// .step-button{
+//   display:flex;
+//   justify-content: space-around;
+//   margin-bottom: 20px;
+// }
 .step-item-back-button{
   background-color: #f6f6f6;
   border: 1px solid #ccc;
   border-color: #dedede;
   color: #333;
   border-radius: 4px;
-  padding: 6px 12px;
-  text-align: center;
-  vertical-align: middle;
+  // padding: 6px 12px;
+  // text-align: center;
+  // vertical-align: middle;
 }
 
 .step-item-update-button{
@@ -160,4 +197,6 @@
   padding: 6px 12px;
   text-align: center;
   vertical-align: middle;
+  float: right;
+  margin-right: 16px;
 }

@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import {RECEIVE_ALL_PROJECTS,RECEIVE_PROJECT,REMOVE_PROJECT, RECEIVE_SEARCHED_PROJECTS
 } from '../../actions/projects_actions';
 import {RECEIVE_COMMENT, DELETE_COMMENT}from '../../actions/comments_actions';
-import {RECEIVE_STEP, DELETE_STEP}from '../../actions/steps_actions';
+import {RECEIVE_STEP, DELETE_STEP, RECEIVE_ALL_STEPS}from '../../actions/steps_actions';
 
 const projectsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -11,12 +11,14 @@ const projectsReducer = (state = {}, action) => {
       return merge({}, state, action.payload.projects);
     case RECEIVE_PROJECT:
       return merge({}, state, {[action.payload.project.id]: action.payload.project});
+    // case RECEIVE_ALL_STEPS:
+    //   // debugger
     case RECEIVE_STEP:
-    // debugger
       const currState = merge({}, state);
       const project1 = currState[action.step.project_id];
-      // debugger
-      project1.step_ids.push(action.step.id);
+      if (!project1.step_ids.includes(action.step.id)){
+        project1.step_ids.push(action.step.id);
+      }
       return currState;
     case RECEIVE_COMMENT:
     // debugger
@@ -37,7 +39,6 @@ const projectsReducer = (state = {}, action) => {
       // const project = curr2[action.commentId]
     case REMOVE_PROJECT:
       const curr3 = merge({}, state);
-      debugger
       delete curr3[action.projectId];
       return curr3;
     default:

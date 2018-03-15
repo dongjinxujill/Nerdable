@@ -7,16 +7,10 @@ class StepsIndex extends React.Component {
     super(props);
     this.state = {steps: this.props.steps};
     this.addStep = this.addStep.bind(this);
+    this.renderButton = this.renderButton.bind(this);
     // this.renderButton = this.renderButton.bind(this);
   }
-  // componentDidMount(){
-  //   this.setState({steps: this.state.steps});
-  // }
 
-  // renderButton(e){
-  //   e.preventDefault();
-  //
-  // }
 
   addStep(e){
     // debugger
@@ -25,23 +19,31 @@ class StepsIndex extends React.Component {
     this.setState({steps: this.state.steps});
   }
 
+  renderButton(idx){
+    debugger
+    if (this.state.steps.length - 1 === idx){
+      return <button className="add-step-button" onClick={this.addStep}>Add Step</button>
+
+    }
+  }
+
   render(){
     // debugger
     if (this.props.steps.length){
-      return this.props.steps.map((step)=>{
+      return this.props.steps.map((step,idx)=>{
         return (
           <div>
-            <Link to={`/projects/${this.props.project.id}/steps/${step.id}`}><li>title: {step.title}</li></Link>
-            <li>body: {step.body}</li>
-            <li>stepNumber: {step.step_number}</li>
-            <img src={step.image}/>
-            <button onClick={this.addStep}>click to add step von step index</button>
+            <div className="each-step-ul">
+              <img className="create-step-image-show" src={step.image}/>
+              <Link className="step-click-to-edit" to={`/projects/${this.props.project.id}/steps/${step.id}`}><li className="step-click-to-edit">Step &nbsp; {step.step_number}:&nbsp; {step.title}</li></Link>
+              <button className="step-delete-button" onClick={()=>this.props.deleteStep(step.id)}><i class="fas fa-trash-alt"></i></button>
+            </div>
+            {this.renderButton(idx)}
           </div>
         );
       });
     } else {
-      // debugger
-      return <button onClick={this.addStep}>click to add step von step index</button>;
+      return <button className="add-step-button" onClick={this.addStep}>Add Step</button>;
     }
   }
 

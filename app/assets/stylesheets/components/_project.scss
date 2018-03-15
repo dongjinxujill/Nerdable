@@ -12,7 +12,7 @@
   color: #fff;
   width:100%;
   height: 600px;
-  // background-size: 1200px;
+  background-size: 100%;
   opacity: 0.9;
   margin-bottom: 40px;
   background-image: url('/assets/main-background.jpg');
@@ -103,7 +103,7 @@
 
 }
 
-.project-image img {
+.project-image {
   border: 0;
   list-style-type: none;
   height: auto;
@@ -163,7 +163,10 @@
   border-radius: 4px;
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  height: 80%;
+  width: 80%;
+  margin-bottom: 30px;
 }
 
 .project-show-author{
@@ -182,12 +185,15 @@
 
 .project-show-body{
   text-align: left;
-  margin: 0 100px 100px 100px;
   font-size: 20px;
   line-height: 32px;
   font-weight: 300;
   color: #555;
   word-wrap: break-word;
+  margin-right: auto;
+  margin-left:auto;
+  width: 1000px;
+  margin-bottom: 30px;
 }
 
 .all-steps{
@@ -209,38 +215,41 @@
 
 .project-show-step-body{
   display: block;
-  margin: 3px 0px 20px;
+  margin: 3px 20px 20px;
   font-size:20px;
   line-height: 32px;
   font-weight: 300;
   text-align: left;
   color: #555;
   word-wrap: break-word;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
 }
 
 .project-show-step-image{
-  width: 250px;
-  height: 250px;
-  // display: inline-block;
-  margin-left: 500px;
+  width: 60%;
+  height: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:1200px;
   align-items: center;
   justify-content: center;
+  margin-bottom:30px;
 }
 
 .create-project-form{
   padding: 0;
   margin-top: 40px;
   position:relative;
-  width: 1016px;
+  margin-left: auto;
+  margin-right: auto;
   background: #fff;
   border: 1px solid rgba(119, 130, 135, 0.4);
   color: #555;
   border-radius: 8px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
 }
 
@@ -250,24 +259,24 @@
   padding: 10px 0px 10px 0px;
   border-radius: 8px;
   width: 35%;
-  margin: 10px 0px 0px 40px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #eee;
+  margin-top: 50px;
   margin-bottom: 10px;
 }
 
 
 .image-and-body{
-  display: flex;
-  justify-content: space-between;
 }
 
 .create-project-body{
-  width: 40%;
+  width: 35%;
   border: 1px solid #dedede;
   text-align: left;
   height: 250px;
   margin-top: 10px;
-  margin-right: 50px;
+  // margin-right: 50px;
   border-radius: 8px;
   background-color: #eee;
 
@@ -289,44 +298,42 @@
 
 .create-project-image-container {
   color: #AAA;
-  display: inline-block;
+  display: block;
   cursor: pointer;
-  width: 40%;
+  width: 35%;
   font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
   // padding: 40px 0px 10px 0px;
   border: 1px solid #dedede;
   border-radius: 8px;
   background-color: #eee;
   margin-top: 10px;
   -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
-  height: 250px;
-  margin-left: 50px;
-}
-.create-project-text-show{
-  padding-top: 100px;
+  // margin-left: 50px;
+  margin-bottom: 20px;
 }
 
-.create-project-image-container {
-  margin-bottom: 20px;
+.create-project-text-show{
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fa-search {
 }
 
 .create-project-submit{
-  display: block;
-  margin-left: 5px;
-  margin-right: 10px;
-  float: right;
   background-color: #e86c00;
   border-color: #cf6000;
   color: #fff;
   border-radius: 4px;
   border: 1px solid transparent;
   cursor: pointer;
-  font-size: 14px;
-  padding: 6px 12px;
-  margin:9px;
+  font-size: 19px;
+  padding: 10px 21px;
+  margin: 9px;
 }
 
 .create-project-error{
@@ -334,4 +341,29 @@
   color: black;
   font-size: 700;
   margin: 10px 0px;
+}
+
+.profile-project-exp{
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+}
+
+.profile-project-container{
+  display: inline-block;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.profile-project-image{
+  width: 200px;
+  height: 200;
+}
+
+.profile-project-title{
+  list-style-type: none;
+}
+
+.profile-project-delete{
+
 }

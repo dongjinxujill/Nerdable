@@ -21,7 +21,7 @@ class ProjectsIndex extends React.Component {
             <button><li className="fas fa-search"></li></button>
           </form>
         </div>
-
+          
       </div>
     );
   }

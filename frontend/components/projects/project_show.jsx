@@ -8,6 +8,7 @@ class ProjectShow extends React.Component {
   constructor(props){
     super(props);
     this.showComment = this.showComment.bind(this);
+    // this.showStep = this.showStep.bind(this);
   }
 
   componentDidMount() {
@@ -22,11 +23,18 @@ class ProjectShow extends React.Component {
     }
   }
 
+  // showStep(){
+  //   if (this.props.project.step_ids){
+  //     return <StepsProjectIndex project={this.props.project}/>;
+  //   }
+  // }
+
   render() {
     const { project } = this.props;
     if (!project) {
       return <div>Loading...</div>;
     }
+    // debugger
     return (
       <div className="project-show">
         <h1 className="project-show-title">{project.title}</h1>

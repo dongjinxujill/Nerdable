@@ -85,7 +85,6 @@ class ProjectForm extends React.Component {
     if (this.props.formType === "create") {
       return <button className="create-project-submit" onClick={this.handleAddStep}>Add Step</button>;
     } else if (this.props.formType === "update") {
-      debugger
       return (
         <div>
           <button className="create-project-submit" onClick={this.handleSubmit}>Publish</button>
@@ -119,7 +118,7 @@ class ProjectForm extends React.Component {
           <label className="create-project-image-container" for="file">{this.renderImage()}
             <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile}/>
           </label>
-          <textarea className="create-project-body" type="text" value={this.state.body} placeholder="Body" onChange={this.update('body')}></textarea>
+          <textarea className="create-project-body" type="text" value={this.state.body} placeholder="Let's describe the project..." onChange={this.update("body")}></textarea>
         </div>
         {this.props.errors.map((err)=> {
           return <li className="create-project-error">{err}</li>;

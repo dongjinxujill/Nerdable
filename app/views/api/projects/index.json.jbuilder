@@ -4,10 +4,9 @@
       json.extract! project, :id, :title, :body, :author_id, :image, :comment_ids
     end
   end
-
   json.users do
     json.set! project.user.id do
-      json.extract! project.user, :username
+      json.project_ids project.user.project_ids
     end
   end
 end

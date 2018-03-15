@@ -1,5 +1,4 @@
-import {
-  RECEIVE_STEP_ERRORS, CLEAR_STEP_ERRORS
+import {RECEIVE_STEP_ERRORS, CLEAR_STEP_ERRORS
 } from '../../actions/steps_actions';
 import merge from 'lodash/merge';
 
