@@ -15,8 +15,19 @@ const usersReducer = (state = {}, action) => {
       return merge({}, action.payload.users);
     case RECEIVE_PROJECT:
       return merge({}, state, {[action.payload.user.id]: action.payload.user}, action.payload.users);
-    case RECEIVE_ALL_COMMENTS:
-      return merge({}, state,action.payload.users);
+
+    case REMOVE_PROJECT:
+      // let currState = merge({}, state);
+      // Object.values(currState).map((project)=>{
+      //   if (project.project_ids.includes(action.projectId)){
+      //     delete project.project_ids[action.projectId];
+      //   }
+      // });
+
+      delete state[state.author_id].project_ids[action.projectId];
+      return state;
+    // case RECEIVE_ALL_COMMENTS:
+    //   return merge({}, state,action.payload.users);
     case RECEIVE_ALL_USERS:
       return merge({}, state, action.users);
     case RECEIVE_USER:

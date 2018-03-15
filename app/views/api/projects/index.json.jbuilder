@@ -5,6 +5,7 @@
     end
   end
   json.users do
+    json.author_id project.author_id
     json.set! project.user.id do
       json.project_ids project.user.project_ids
     end

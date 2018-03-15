@@ -36,7 +36,7 @@ class StepsIndex extends React.Component {
             <div className="each-step-ul">
               <img className="create-step-image-show" src={step.image}/>
               <Link className="step-click-to-edit" to={`/projects/${this.props.project.id}/steps/${step.id}`}><li className="step-click-to-edit">Step &nbsp; {step.step_number}:&nbsp; {step.title}</li></Link>
-              <button className="step-delete-button" onClick={()=>this.props.deleteStep(step.id)}><i class="fas fa-trash-alt"></i></button>
+              <button className="step-delete-button" onClick={()=>this.props.deleteStep(step.id)}><i className="fas fa-trash-alt"></i></button>
             </div>
             {this.renderButton(idx)}
           </div>

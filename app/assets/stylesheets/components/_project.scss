@@ -106,8 +106,8 @@
 .project-image {
   border: 0;
   list-style-type: none;
-  height: auto;
-  vertical-align: middle;
+  // height: auto;
+  // vertical-align: middle;
   left: auto;
   right: auto;
 }
@@ -127,6 +127,7 @@
 .project-index-item-delete{
   float:right;
   padding-right: 5px;
+  font-weight: 700;
 }
 
 .project-show{
@@ -136,7 +137,6 @@
 
 .each-project-main{
   position: absolute;
-
 }
 
 .project-not-found{
@@ -343,6 +343,44 @@
   margin: 10px 0px;
 }
 
+.profile-username-image{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.profile-username{
+  list-style-type: none;
+  vertical-align: middle;
+  margin-left: 50px;
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 25px;
+  // margin-left: auto;
+  // margin-right: auto;
+}
+
+.profile-image{
+  // display: inline-block;
+  margin: 10px 0 0;
+  width: 116px;
+  height: 116px;
+  border-radius: 58px;
+  -webkit-border-radius: 58px;
+
+}
+
+.profile-username-created-at{
+  display: block;
+}
+
+.profile-created-at{
+  list-style-type: none;
+  margin-left: 50px;
+
+}
+
 .profile-project-exp{
   font-weight: 700;
   font-size: 50px;
@@ -356,8 +394,8 @@
 }
 
 .profile-project-image{
-  width: 200px;
-  height: 200;
+  width: 300px;
+  height: 300px;
 }
 
 .profile-project-title{

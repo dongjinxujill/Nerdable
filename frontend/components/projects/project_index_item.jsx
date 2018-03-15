@@ -16,7 +16,7 @@ class ProjectIndexItem extends React.Component {
   renderDeleteButton(project){
     if (this.props.currentUser){
       if (this.props.currentUser.id === this.props.project.author_id){
-        return <button className="project-index-item-delete" onClick={()=>this.handleDelete(this.props.project.id)}><i class="far fa-trash-alt"></i></button>
+        return <button className="project-index-item-delete" onClick={()=>this.handleDelete(this.props.project.id)}>X</button>
       }
     }
   }
