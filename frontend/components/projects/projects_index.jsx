@@ -9,7 +9,7 @@ class ProjectsIndex extends React.Component {
 
   render() {
     return (
-      <div className="">
+      <div>
         <div className="container">
           <form className="makeit-searchform" >
             <span className="title">Let's Make</span>
@@ -21,7 +21,6 @@ class ProjectsIndex extends React.Component {
             <button><li className="fas fa-search"></li></button>
           </form>
         </div>
-          
       </div>
     );
   }

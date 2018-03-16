@@ -1,3 +1,4 @@
+
 .main-main-div {
   background-color: #d4e1e7;
   height: 100%;
@@ -16,7 +17,7 @@
   background-size: 100%;
   opacity: 0.9;
   margin-bottom: 40px;
-  background-image: url('/assets/main-background.jpg');
+  background-image: url('/assets/source.gif');
 }
 
 .makeit-searchform{
@@ -159,8 +160,6 @@
 }
 
 .project-show-image{
-  width: 90%;
-  height: auto;
   border-radius: 4px;
   display: block;
   margin-left: auto;
@@ -229,11 +228,11 @@
 }
 
 .project-show-step-image{
-  width: 60%;
-  height: 60%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 60%;
+  height: 60%;
   width:1200px;
   align-items: center;
   justify-content: center;
