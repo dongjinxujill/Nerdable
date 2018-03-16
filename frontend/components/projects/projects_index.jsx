@@ -9,7 +9,7 @@ class ProjectsIndex extends React.Component {
 
   render() {
     return (
-      <Link to={"/projects/428"}>
+      <Link to={"/projects/102"}>
         <div className="container">
           <form className="makeit-searchform" >
             <span className="title">Let's Make</span>
