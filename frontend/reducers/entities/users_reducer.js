@@ -11,8 +11,14 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_PROJECT:
       return merge({}, state, {[action.payload.user.id]: action.payload.user}, action.payload.users);
     case REMOVE_PROJECT:
-      delete state[state.author_id].project_ids[action.projectId];
-      return state;
+      const curr = merge({}, state);
+      curr[curr.author_id].project_ids.map((projectId,idx)=>{
+        if (projectId === action.projectId){
+          delete curr[curr.author_id].project_ids[idx];
+        }
+      });
+       // curr[curr.author_id].project_ids.filter(projectId=>projectId!==action.projectId);
+      return curr;
     // case RECEIVE_ALL_COMMENTS:
     //   return merge({}, state,action.payload.users);
     case RECEIVE_ALL_USERS:

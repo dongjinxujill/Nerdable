@@ -37,7 +37,7 @@ const App = () => (
         <GreetingContainer />
       </header>
       <Switch>
-        <Route exact path="/users/:userId" component={ProfileContainer}/>
+        <ProtectedRoute exact path="/users/:userId" component={ProfileContainer}/>
         <Route exact path="/projects/search" component={ProjectsSearchResult}/>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />

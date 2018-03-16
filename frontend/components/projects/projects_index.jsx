@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 
 class ProjectsIndex extends React.Component {
 
@@ -9,7 +9,7 @@ class ProjectsIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <Link to={"/projects/428"}>
         <div className="container">
           <form className="makeit-searchform" >
             <span className="title">Let's Make</span>
@@ -21,9 +21,9 @@ class ProjectsIndex extends React.Component {
             <button><li className="fas fa-search"></li></button>
           </form>
         </div>
-      </div>
+      </Link>
     );
   }
 }
 
-export default ProjectsIndex;
+export default withRouter(ProjectsIndex);

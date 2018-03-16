@@ -13,7 +13,7 @@
 .container{
   color: #fff;
   width:100%;
-  height: 600px;
+  height: 1000px;
   background-size: 100%;
   opacity: 0.9;
   margin-bottom: 40px;
@@ -24,14 +24,15 @@
   display: flex;
   justify-content: center;
   padding: 0;
-  padding-top: 200px;
+  padding-top: 300px;
   cursor: pointer;
 }
+
 .title{
   font-family: "CompleteInHim";
   top: -10px;
   left: 4px;
-  font-size: 115px;
+  font-size: 200px;
   letter-spacing: 4px;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
   padding: 0 20px;
@@ -43,7 +44,7 @@
 }
 
 .animation{
- height: 50px;
+ height: 70px;
 }
 .dummy-input p{
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -51,7 +52,7 @@
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
-  font-size: 30px;
+  font-size: 60px;
   animation:
     type 2s steps(40, end),
     blink-caret .75s step-end infinite;
@@ -64,18 +65,18 @@
 
 #makeit-searchfield{
   top: 0;
-  width: 200px;
-  height: 50px;
+  width: 300px;
+  height: 70px;
   line-height: 75px;
   cursor: pointer;
   padding: 4px 6px;
   border-bottom: 5px solid white;
-  margin-top: 20px;
+  margin-top: 70px;
 }
 
 .fa-search{
   padding: 10px 20px 0px 20px;
-  font-size: 50px;
+  font-size: 80px;
 }
 
 .project {
@@ -87,38 +88,46 @@
 .each-project-show{
   display: inline-block;
   list-style-type: none;
-  position: relative;
+  // position: relative;
   width: 306px;
   height: 306px;
   margin: 30px;
   background: #fff;
-  box-shadow: 0 1px 0 rgba(0,0,0,.15);
-  border: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
-.project-main-page{
-  border: 1px solid #D3D3D3;
-  box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
-  text-align: center;
-  width: 100px;
-
+.projects-search-result {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+// .each-project-main{
+//   list-style-type: none;
+//   position: relative;
+//   width: 306px;
+//   height: 306px;
+//   margin: 30px;
+//   background: #fff;
+//   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+//   border: 1px solid rgba(0, 0, 0, 0.1);
+//   box-sizing: border-box;
+// }
+
 .project-image {
-  border: 0;
-  list-style-type: none;
-  // height: auto;
-  // vertical-align: middle;
-  left: auto;
-  right: auto;
+  display: block;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
 }
 
 .project-title{
-  padding: 5px;
+  padding-top: 5px;
   font-weight: 700;
   list-style-type: none;
   text-align: center;
+  position: absolute;
 }
 
 .project-author{
@@ -130,6 +139,7 @@
   float:right;
   padding-right: 5px;
   font-weight: 700;
+  padding-top: 35px;
 }
 
 .project-show{
@@ -139,6 +149,8 @@
 
 .each-project-main{
   position: absolute;
+  width: 306px;
+  height: 306px;
 }
 
 .project-not-found{
@@ -179,7 +191,7 @@
 .project-show-date{
   text-align: right;
   line-height: 52px;
-  margin-right: 100px;
+  margin-right: 188px;
   color: #999;
 }
 
@@ -289,13 +301,14 @@
 }
 
 .create-project-image-show {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   display: inline-block;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
+  border-radius: 8px;
+
 }
 
 .create-project-image-container {
@@ -390,23 +403,42 @@
   text-align: center;
 }
 
+.profile-projects{
+  display: flex;
+}
+
 .profile-project-container{
   display: inline-block;
-  justify-content: space-around;
-  padding: 30px;
+  list-style-type: none;
+  position: relative;
+  width: 306px;
+  height: 306px;
+  margin: 30px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .profile-project-image{
-  width: 300px;
-  height: 300px;
+  display: block;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
 }
 
 .profile-project-title{
+  padding-top: 5px;
+  font-weight: 700;
   list-style-type: none;
+  text-align: center;
+  position: absolute;
 }
 
 .profile-project-delete{
-
+  float:right;
+  margin-right:5px;
+  padding-top: 40px;
 }
 
 .profile-project-not-found{

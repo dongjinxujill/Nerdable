@@ -8,27 +8,28 @@ class ProjectsSearchResult extends React.Component {
     this.showResult = this.showResult.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
-  componentWillReceiveProps(nextProps) {
-    // if (this.props.projects !== nextProps.projects) {
-    //   this.props.fetchSearchedProjects(nextProps.projects);
-    // }
-    // else {
-    //   this.props.fetchSearchedProjects(this.props.projects);
-    // }
-  }
+  // componentDidMount() {
+  //
+  // }
+  //
+  // componentWillReceiveProps(nextProps) {
+  //   // if (this.props.projects !== nextProps.projects) {
+  //   //   this.props.fetchSearchedProjects(nextProps.projects);
+  //   // }
+  //   // else {
+  //   //   this.props.fetchSearchedProjects(this.props.projects);
+  //   // }
+  // }
 
 
   showResult(){
     if (this.props.projects.length){
       // debugger
       return this.props.projects.map((project)=>{
-        return (
-          <span className="each-project-show"><ProjectIndexItem project={project} currentUser={this.props.currentUser} deleteProject={this.props.deleteProject}/></span>
-        );
+        return <div className="each-project-show">
+          <ProjectIndexItem style={{ width: '50px' }}
+            project={project} currentUser={this.props.currentUser} deleteProject={this.props.deleteProject}/>
+          </div>;
       });
     } else {
       return <p className="project-not-found">project not found...</p>;
@@ -38,7 +39,7 @@ class ProjectsSearchResult extends React.Component {
 
   render(){
     return (
-      <div>{this.showResult()}</div>
+      <div  className="projects-search-result">{this.showResult()}</div>
     );
   }
 }

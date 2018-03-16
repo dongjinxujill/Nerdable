@@ -23,12 +23,12 @@ class Profile extends React.Component {
           <div className="profile-project-container">
             <Link to={`/projects/${project.id}`}><img className="profile-project-image" src={project.image} /></Link>
             <li className="profile-project-title">{project.title}</li>
-            <button className="profile-project-delete" onClick={this.handleDelete(project)}>Delete</button>
+            <button className="profile-project-delete" onClick={this.handleDelete(project)}><i class="fas fa-trash"></i></button>
           </div>
         );
       });
 
-    }
+    } 
 
   }
 
@@ -49,7 +49,7 @@ class Profile extends React.Component {
             <li className="profile-created-at">Joined &emsp; {this.props.user.createdAt}</li>
           </div>
         </div>
-        {this.showProjects()}
+        <div className="profile-projects">{this.showProjects()}</div>
       </div>
     );
   }

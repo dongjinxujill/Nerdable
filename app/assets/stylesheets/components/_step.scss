@@ -52,15 +52,17 @@
 }
 
 .edit-step-image-show{
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   display: inline-block;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 6px;
+  // margin-top: 20px;
+  // margin-left: 40px;
+  // margin-left: auto;
+  // margin-right: auto;
 }
 
 .create-step-text-show{
