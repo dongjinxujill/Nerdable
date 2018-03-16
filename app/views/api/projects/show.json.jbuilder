@@ -27,7 +27,7 @@ end
 json.users do
   @project.comments.map(&:author).each do |author|
     json.set! author.id do
-      json.extract! author, :id, :username
+      json.extract! author, :id, :username, :image
     end
   end
 end

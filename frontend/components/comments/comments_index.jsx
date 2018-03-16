@@ -7,6 +7,7 @@ class CommentsIndex extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
     this.renderDeleteButton = this.renderDeleteButton.bind(this);
     this.getUsername = this.getUsername.bind(this);
+    this.renderHeadshot = this.renderHeadshot.bind(this);
   }
 
   componentDidMount() {
@@ -36,19 +37,26 @@ class CommentsIndex extends React.Component {
       return '';
     }
     if (this.props.currentUser.id === comment.author_id){
-      return <button className="delete-comment-button" onClick={()=>this.props.deleteComment(comment.id)}>X</button>
+      return <button className="delete-comment-button" onClick={()=>this.props.deleteComment(comment.id)}>X</button>;
     }
   }
 
   getUsername(comment){
-    // debugger
     if (this.props.users[comment.author_id]){
       return this.props.users[comment.author_id].username;
     }
   }
 
+  renderHeadshot(comment){
+    if (this.props.users[comment.author_id].image_url){
+      return this.props.users[comment.author_id].image_url;
+    } else if (this.props.users[comment.author_id].image){
+      return this.props.users[comment.author_id].image;
+    }
+  }
+
   render() {
-    // debugger
+    debugger
     return (
       <div className="all-comments">
         <p className="comment-count">{this.props.comments.length} Comments</p>
@@ -56,6 +64,7 @@ class CommentsIndex extends React.Component {
           return (
             <article className="one-comment">
               <div className="comment-author-create">
+                <img className="comment-author-headshot" src={this.renderHeadshot(comment)}/>
                 <li className="comment-author">posted by: <Link to={`/users/${this.props.users[comment.author_id].id}`}>{this.getUsername(comment)}</Link></li>
                 <li className="comment-create-at" value={comment.createAt}>at: {comment.createAt}</li>
               </div>
