@@ -56,7 +56,6 @@ class CommentsIndex extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="all-comments">
         <p className="comment-count">{this.props.comments.length} Comments</p>

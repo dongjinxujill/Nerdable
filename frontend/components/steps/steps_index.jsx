@@ -20,10 +20,8 @@ class StepsIndex extends React.Component {
   }
 
   renderButton(idx){
-    debugger
     if (this.state.steps.length - 1 === idx){
-      return <button className="add-step-button" onClick={this.addStep}>Add Step</button>
-
+      return <button className="add-step-button" onClick={this.addStep}>Add Step</button>;
     }
   }
 
