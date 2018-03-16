@@ -6,10 +6,13 @@ const stepsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_STEPS:
+    // debugger
       return merge({}, state, action.steps);
     case RECEIVE_STEP:
+    // debugger
       return merge({}, state, {[action.step.id]: action.step});
     case RECEIVE_PROJECT:
+    // debugger
       return merge({}, action.payload.steps);
     case DELETE_STEP:
       let curr = merge({}, state);

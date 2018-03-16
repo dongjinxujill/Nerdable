@@ -1,6 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter,Link } from 'react-router-dom';
 import ProjectIndexItem from '../projects/project_index_item';
+import ProjectShow from '../projects/project_show';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -11,24 +12,24 @@ class Profile extends React.Component {
 
   componentDidMount(){
     this.props.fetchUser(this.props.user.id);
-    // this.props.fetchAllProjects();
+    this.props.fetchAllProjects();
   }
 
   showProjects(){
+    // debugger
     if (this.props.projects){
-      // debugger
       return this.props.projects.map((project)=>{
         return (
           <div className="profile-project-container">
-            <img className="profile-project-image" src={project.image} />
+            <Link to={`/projects/${project.id}`}><img className="profile-project-image" src={project.image} /></Link>
             <li className="profile-project-title">{project.title}</li>
             <button className="profile-project-delete" onClick={this.handleDelete(project)}>Delete</button>
           </div>
         );
       });
-    } else {
-      return <p className="profile-project-not-found">No projects created yet...</p>;
+
     }
+
   }
 
   handleDelete(project){
@@ -55,4 +56,4 @@ class Profile extends React.Component {
 
 }
 
-export default Profile;
+export default withRouter(Profile);

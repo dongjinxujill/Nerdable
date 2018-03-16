@@ -36,12 +36,15 @@ class CommentsIndex extends React.Component {
       return '';
     }
     if (this.props.currentUser.id === comment.author_id){
-      return <button className="delete-comment-button" onClick={()=>this.props.deleteComment(comment.id)}><i className="fas fa-trash-alt"></i></button>
+      return <button className="delete-comment-button" onClick={()=>this.props.deleteComment(comment.id)}>X</button>
     }
   }
 
   getUsername(comment){
-    return this.props.users[comment.author_id].username;
+    // debugger
+    if (this.props.users[comment.author_id]){
+      return this.props.users[comment.author_id].username;
+    }
   }
 
   render() {

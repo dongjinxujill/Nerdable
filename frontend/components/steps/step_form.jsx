@@ -9,7 +9,7 @@ class StepForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
   }
-  
+
   // componentWillUnmount(){
   //   this.setState({title: "", body: "", projectId: this.props.project.id, imageUrl: null, imageFile:null});
   // }
@@ -57,7 +57,7 @@ class StepForm extends React.Component{
       <form onSubmit={this.handleSubmit}>
         <input type="file" onChange={this.updateFile}/>
         <input type="text" value={this.state.title} placeholder="click to edit" onChange={this.update("title")}/>
-        <input type="text" value={this.state.body} onChange={this.update("body")}/>
+        <textarea type="text" value={this.state.body} onChange={this.update("body")}></textarea>
         <button>Add Step real</button>
       </form>
     );

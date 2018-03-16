@@ -12,6 +12,7 @@ const commentsReducer = (state = {}, action) => {
     case RECEIVE_PROJECT:
       return merge({}, action.payload.comments);
     case DELETE_COMMENT:
+    // debugger
       let curr = merge({}, state);
       delete curr[action.commentId];
       return curr;

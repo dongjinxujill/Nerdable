@@ -250,16 +250,18 @@
   border: 1px solid rgba(119, 130, 135, 0.4);
   color: #555;
   border-radius: 8px;
+  width: 90%;
   text-align: center;
   -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
 }
+
 
 .create-project-title{
   list-style-type: none;
   border: 1px solid #dedede;
   padding: 10px 0px 10px 0px;
   border-radius: 8px;
-  width: 35%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   background-color: #eee;
@@ -272,7 +274,7 @@
 }
 
 .create-project-body{
-  width: 35%;
+  width: 50%;
   border: 1px solid #dedede;
   text-align: left;
   height: 250px;
@@ -301,7 +303,7 @@
   color: #AAA;
   display: block;
   cursor: pointer;
-  width: 35%;
+  width: 50%;
   font-size: 20px;
   margin-left: auto;
   margin-right: auto;
