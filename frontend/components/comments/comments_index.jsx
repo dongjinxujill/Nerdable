@@ -56,7 +56,7 @@ class CommentsIndex extends React.Component {
           return (
             <article className="one-comment">
               <div className="comment-author-create">
-                <li className="comment-author">posted by: {this.getUsername(comment)}</li>
+                <li className="comment-author">posted by: <Link to={`/users/${this.props.users[comment.author_id].id}`}>{this.getUsername(comment)}</Link></li>
                 <li className="comment-create-at" value={comment.createAt}>at: {comment.createAt}</li>
               </div>
               <li className="comment-body">{comment.body}</li>
