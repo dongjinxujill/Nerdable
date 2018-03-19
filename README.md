@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## TheRule
 
-Things you may want to cover:
+[TheRule][heroku]
 
-* Ruby version
+[heroku]: https://therule.herokuapp.com
 
-* System dependencies
+TheRule is a full-stack web application that shares your DIY projects similar to Instructables. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
-* Configuration
+## Features & Implementation
 
-* Database creation
+### Projects
 
-* Database initialization
+Projects 
 
-* How to run the test suite
+### Steps
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Comments
 
-* ...
+
+### Searches
+
+
+### Profiles
+
+
+## Future for the Project
+
+Below are some of the things I hope to continue working on and implementing in the near future .
+
+### Follows
+
+### Features
+
+### Categories
