@@ -3,7 +3,6 @@
 
   def show
     @project = Project.includes(comments: :author).find(params[:id])
-    # debugger
     if @project
       render :show
     else

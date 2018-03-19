@@ -1,4 +1,3 @@
-# debugger
 @comments.each do |comment|
   json.comments do
     json.set! comment.id do

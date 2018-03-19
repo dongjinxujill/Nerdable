@@ -13,7 +13,6 @@ class StepsIndex extends React.Component {
 
 
   addStep(e){
-    // debugger
     e.preventDefault();
     this.props.createStep({title:"click to edit", body: "", step_number: this.state.steps.length, project_id: this.props.project.id, image: null});
     this.setState({steps: this.state.steps});
@@ -26,7 +25,6 @@ class StepsIndex extends React.Component {
   }
 
   render(){
-    // debugger
     if (this.props.steps.length){
       return this.props.steps.map((step,idx)=>{
         return (

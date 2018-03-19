@@ -15,7 +15,6 @@ class CommentsIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    // debugger
     if (this.props.errors.length !== nextProps.errors.length){
       return nextProps.errors.map((err)=>{
         return <p>{err}</p>;

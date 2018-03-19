@@ -41,7 +41,6 @@ class User < ApplicationRecord
   private
 
   def ensure_session_token
-    # debugger
     generate_unique_session_token unless self.session_token
   end
 

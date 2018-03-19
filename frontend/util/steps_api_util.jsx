@@ -21,7 +21,6 @@ export const createStep = step => (
 );
 
 export const updateStep = (formData, stepId) => {
-  // debugger
   return $.ajax({
     method: "PATCH",
     url: `/api/steps/${stepId}`,

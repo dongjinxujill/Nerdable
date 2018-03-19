@@ -7,7 +7,6 @@ const commentErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_COMMENT_ERRORS:
-    // debugger
       return merge([],action.errors);
     case CLEAR_COMMENT_ERRORS:
       return [];

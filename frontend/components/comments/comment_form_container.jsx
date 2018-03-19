@@ -4,10 +4,8 @@ import {createComment, deleteComment, clearCommentErrors
 } from '../../actions/comments_actions';
 
 const msp = (state, ownProps) => {
-  // debugger
   const project = ownProps.project;
   const currentUser = Object.values(state.entities.users);
-  // debugger
   return {
     commentIds: project.comment_ids,
     project,

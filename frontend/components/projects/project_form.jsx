@@ -7,7 +7,6 @@ import StepsIndexContainer from '../steps/steps_index_container';
 class ProjectForm extends React.Component {
 
   constructor(props) {
-    // debugger
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderImage = this.renderImage.bind(this);
@@ -110,7 +109,6 @@ class ProjectForm extends React.Component {
     }
   }
   render() {
-    // debugger
     return (
       <div className="create-project-form">
         <input className="create-project-title" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>

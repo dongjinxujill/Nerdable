@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
     this.state = {body:"", project_id: this.props.project.id, author_id: this.props.currentUser[0].id};
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,7 +41,6 @@ class CommentForm extends React.Component {
   // }
 
   render(){
-    // debugger
     return (
       <form className="comment-form" onSubmit={this.handleSubmit}>
         <textarea className="comment-input" value={this.state.body} type="text" onChange={this.update("body")} placeholder="Post comment..."></textarea>

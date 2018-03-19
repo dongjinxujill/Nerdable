@@ -12,12 +12,10 @@ class ProjectShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
   showComment(){
-    // debugger
     if (this.props.project.comment_ids){
       return <CommentsIndex project={this.props.project}/>;
     }
@@ -38,7 +36,6 @@ class ProjectShow extends React.Component {
     if (!project) {
       return <div>Loading...</div>;
     }
-    // debugger
     return (
       <div className="project-show">
         <h1 className="project-show-title">{project.title}</h1>

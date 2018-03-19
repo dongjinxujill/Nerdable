@@ -16,7 +16,6 @@ class Profile extends React.Component {
   }
 
   showProjects(){
-    // debugger
     if (this.props.projects){
       return this.props.projects.map((project)=>{
         return (
@@ -28,7 +27,7 @@ class Profile extends React.Component {
         );
       });
 
-    } 
+    }
 
   }
 

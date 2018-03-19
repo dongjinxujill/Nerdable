@@ -22,7 +22,6 @@ const removeComment = (commentId) => ({
 });
 
 const receiveCommentErrors = (errors) => {
-  // debugger
   return {
     type: RECEIVE_COMMENT_ERRORS,
     errors
@@ -53,7 +52,6 @@ export const updateComment = comment => dispatch => (
 ));
 
 export const deleteComment = id => dispatch => {
-  // debugger
   return CommentsApiUtil.deleteComment(id).then(
     () => dispatch(removeComment(id)),
     err => dispatch(receiveCommentErrors(err.responseJSON))

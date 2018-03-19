@@ -5,7 +5,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Greeting extends React.Component{
   constructor(props){
-    // debugger
     super(props);
     this.state = {search: ''};
     this.update = this.update.bind(this);
@@ -56,7 +55,6 @@ class Greeting extends React.Component{
   }
 
  render(){
-   // debugger
    return (
      <div className="search-login">
        <form className="search-form" onSubmit={this.handleSubmit}>

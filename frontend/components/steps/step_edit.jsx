@@ -48,7 +48,6 @@ class StepEdit extends React.Component {
     if (this.state.imageUrl) {
       formData.append("step[image]", this.state.imageUrl);
     }
-    // debugger
     this.props.updateStep(formData, this.state.id).then(()=> this.props.history.replace(`/projects/${this.props.projectId}/edit`) );
   }
 

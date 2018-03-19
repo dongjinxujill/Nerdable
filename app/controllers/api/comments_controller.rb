@@ -2,7 +2,6 @@ class Api::CommentsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    # debugger
     @comments = Comment.where(project_id: params[:project_id])
   end
 

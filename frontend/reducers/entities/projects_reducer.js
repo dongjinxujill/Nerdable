@@ -25,7 +25,6 @@ const projectsReducer = (state = {}, action) => {
       project.comment_ids.push(action.comment.id);
       return curr1;
     case DELETE_COMMENT:
-    // debugger
     const curr2 = merge({}, state);
       Object.values(curr2).map((project)=>{
         if (project.comment_ids.includes(action.commentId)){

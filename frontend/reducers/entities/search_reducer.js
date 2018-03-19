@@ -8,7 +8,6 @@ const searchReducer = (state = {}, action) => {
       return action.payload;
     case REMOVE_PROJECT:
       const currState = merge([],state);
-      // debugger
       for (let i = 0; i < currState.length; i++){
         if (currState[i].id === action.projectId){
           delete currState[i];

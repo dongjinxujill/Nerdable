@@ -41,7 +41,6 @@ export const updateProject = (formData, projectId) => {
 };
 
 export const deleteProject = (id) => {
-  // debugger
   return $.ajax({
     method: 'DELETE',
     url: `/api/projects/${id}`

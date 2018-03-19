@@ -24,7 +24,6 @@ class ProjectsSearchResult extends React.Component {
 
   showResult(){
     if (this.props.projects.length){
-      // debugger
       return this.props.projects.map((project)=>{
         return <div className="each-project-show">
           <ProjectIndexItem style={{ width: '50px' }}

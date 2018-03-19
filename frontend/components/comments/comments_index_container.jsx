@@ -4,7 +4,6 @@ import { fetchAllComments, deleteComment } from '../../actions/comments_actions'
 
 const mapStateToProps = (state, ownProps) => {
   const project = ownProps.project;
-  // debugger
   const comments = [];
   project.comment_ids.map((id)=>{
     if (state.entities.comments[id]) {
