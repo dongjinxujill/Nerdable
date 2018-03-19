@@ -44,7 +44,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
