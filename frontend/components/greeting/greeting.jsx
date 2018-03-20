@@ -33,7 +33,7 @@ class Greeting extends React.Component{
       return (
         <hgroup className="header-group">
           <img className="user-headshot" src={this.props.currentUser.image_url} />
-          <div class="dropdown">
+          <div className="dropdown">
             <button className="dropbtn">{this.props.currentUser.username}&nbsp;<i className="fas fa-sort-down"></i></button>
             <div className="dropdown-content">
               <Link to={`/users/${this.props.currentUser.id}`}>Profile</Link>
@@ -59,7 +59,7 @@ class Greeting extends React.Component{
      <div className="search-login">
        <form className="search-form" onSubmit={this.handleSubmit}>
          <input className="search-input" type='text' value={this.state.search} placeholder="Let's Make ..." onChange={this.update('search')}/>
-         <button className="search-button"><i class="fas fa-search" id="fa-search-header"></i></button>
+         <button className="search-button"><i className="fas fa-search" id="fa-search-header"></i></button>
        </form>
        {this.renderOnRightSide()}
      </div>

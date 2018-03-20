@@ -16,7 +16,8 @@ class ProjectsSearchBar extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    return <Link to="/projects/search" component={ProjectsSearch}></Link>
+    // return <Link to="/projects/search" component={ProjectsSearch}></Link>
+    return <Link to="/projects/search"></Link>
   }
   render(){
     return (
