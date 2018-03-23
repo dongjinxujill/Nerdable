@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import StepFormContainer from '../steps/step_form_container';
 import StepsIndexContainer from '../steps/steps_index_container';
 
 
@@ -113,7 +112,7 @@ class ProjectForm extends React.Component {
       <div className="create-project-form">
         <input className="create-project-title" type="text" value={this.state.title} placeholder="Title" onChange={this.update('title')}/>
         <div className="image-and-body">
-          <label className="create-project-image-container" for="file">{this.renderImage()}
+          <label className="create-project-image-container" htmlFor="file">{this.renderImage()}
             <input className="inputfile" id="file" name="file" type="file" onChange={this.updateFile}/>
           </label>
           <textarea className="create-project-body" type="text" value={this.state.body} placeholder="Let's describe the project..." onChange={this.update("body")}></textarea>

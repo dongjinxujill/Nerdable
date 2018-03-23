@@ -58,15 +58,15 @@ class CommentsIndex extends React.Component {
     return (
       <div className="all-comments">
         <p className="comment-count">{this.props.comments.length} Comments</p>
-        {this.props.comments.map((comment)=>{
+        {this.props.comments.map((comment,idx)=>{
           return (
-            <article className="one-comment">
-              <div className="comment-author-create">
-                <img className="comment-author-headshot" src={this.renderHeadshot(comment)}/>
-                <li className="comment-author">posted by: <Link to={`/users/${this.props.users[comment.author_id].id}`}>{this.getUsername(comment)}</Link></li>
-                <li className="comment-create-at" value={comment.createAt}>at: {comment.createAt}</li>
+            <article className="one-comment" key={idx-40} >
+              <div className="comment-author-create" key={idx-100} >
+                <img key={idx+100}  className="comment-author-headshot" src={this.renderHeadshot(comment)}/>
+                <li key={idx+200}  className="comment-author">posted by: <Link to={`/users/${this.props.users[comment.author_id].id}`}>{this.getUsername(comment)}</Link></li>
+                <li key={idx+1}  className="comment-create-at" value={comment.createAt}>at: {comment.createAt}</li>
               </div>
-              <li className="comment-body">{comment.body}</li>
+              <li key={idx-50} className="comment-body">{comment.body}</li>
               {this.renderDeleteButton(comment)}
             </article>
           );

@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
     const demo = {username: 'demologin', password: 'demologin'};
     this.setState(demo);
     setTimeout(() => {
-      this.props.processForm(demo).then(() => {
+      this.props.login(demo).then(() => {
         this.props.history.push('/');
       });
     }, 1000);

@@ -38,7 +38,7 @@ class Greeting extends React.Component{
             <div className="dropdown-content">
               <Link to={`/users/${this.props.currentUser.id}`}>Profile</Link>
               <a><button className="header-button" onClick={this.props.logout}>Log Out</button></a>
-              <a><Link className="header-link" to="/projects/new">New Project</Link></a>
+              <Link className="header-link" to="/projects/new">New Project</Link>
             </div>
           </div>
       	</hgroup>

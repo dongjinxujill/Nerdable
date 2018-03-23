@@ -9,7 +9,7 @@ end
 json.users do
   @comments.map(&:author).each do |author|
     json.set! author.id do
-      json.extract! author, :id, :username, :image_url
+      json.extract! author, :id, :username, :image
 
     end
   end

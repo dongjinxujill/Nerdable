@@ -17,7 +17,7 @@ class ProjectShow extends React.Component {
 
   showComment(){
     if (this.props.project.comment_ids){
-      return <CommentsIndex project={this.props.project}/>;
+      return <CommentsIndex project={this.props.project} key={this.props.project.id+100}/>;
     }
   }
 
@@ -46,15 +46,15 @@ class ProjectShow extends React.Component {
         <div className="all-steps">
           {this.props.steps.map((step,idx)=>{
             return (
-              <div className="project-show-step">
-                <li className="project-show-step-number">Step {idx}: &ensp;{step.title}</li>
-                <img className="project-show-step-image" src={step.image}/>
-                <li className="project-show-step-body">{step.body}</li>
+              <div className="project-show-step" key={step.id-500} >
+                <li  key={step.id} className="project-show-step-number">Step {idx}: &ensp;{step.title}</li>
+                <img  key={step.id+2000} className="project-show-step-image" src={step.image}/>
+                <li  key={step.id+20001} className="project-show-step-body">{step.body}</li>
               </div>
             );
           })}
         </div>
-        <CommentForm project={project}/>
+        <CommentForm project={project} key={project.id}/>
         {this.showComment()}
       </div>
     );

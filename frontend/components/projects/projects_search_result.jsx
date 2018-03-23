@@ -24,9 +24,9 @@ class ProjectsSearchResult extends React.Component {
 
   showResult(){
     if (this.props.projects.length){
-      return this.props.projects.map((project)=>{
-        return <div className="each-project-show">
-          <ProjectIndexItem style={{ width: '50px' }}
+      return this.props.projects.map((project,idx)=>{
+        return <div className="each-project-show" key={idx-1002}>
+          <ProjectIndexItem style={{ width: '50px' }} key={idx+3}
             project={project} currentUser={this.props.currentUser} deleteProject={this.props.deleteProject}/>
           </div>;
       });
