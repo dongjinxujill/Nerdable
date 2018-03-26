@@ -1,5 +1,7 @@
 # README
 
+### [Live](https://therule.herokuapp.com/)
+
 ## TheRule
 
 TheRule is a full-stack web application that shares Do-It-Yourself projects inspired by Instructables. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
