@@ -3,14 +3,20 @@
 ## TheRule
 
 ### [Live](https://therule.herokuapp.com/)
+
 TheRule is a full-stack web application that shares Do-It-Yourself projects inspired by Instructables. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
 ## Features & Implementation
 
+### Login/Signup
+
+Route utility creates several types of routes: auth route, protected route. Auth route means user isn't authorized to visit. Protected route means user is not logged in and doesn't have access to information that requires login. 
 
 ### Projects
 
-Logged-in users are allowed to create their own projects by clicking "create a project" button at the navigation bar or at the dropdown menu on the top right. Creating and editing project is using the same React Component in order to write DRY code and extend the project's scalability. 
+If user is not logged in, clicking "write a project" will redirect user to login or sign up form.
+
+Logged-in users are allowed to create their own projects by clicking "write a project" button at the navigation bar or at the dropdown menu on the top right. Creating and editing project is using the same React Component in order to write DRY code and extend the project's scalability. 
 
 ```
 #project_form_container.jsx
