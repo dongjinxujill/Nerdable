@@ -9,6 +9,7 @@ class ProjectShow extends React.Component {
     super(props);
     this.showComment = this.showComment.bind(this);
     this.renderUsername = this.renderUsername.bind(this);
+    this.renderCommentForm = this.renderCommentForm.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,12 @@ class ProjectShow extends React.Component {
 
   renderUsername(project){
     return <Link to={`/users/${project.author_id}`} >{this.props.authors[project.author_id].username}</Link>;
+  }
+
+  renderCommentForm(project){
+    if (this.props.currentUser){
+      return <CommentForm project={project} key={project.id}/>;
+    }
   }
 
   render() {
@@ -54,7 +61,7 @@ class ProjectShow extends React.Component {
             );
           })}
         </div>
-        <CommentForm project={project} key={project.id}/>
+        {this.renderCommentForm(project)}
         {this.showComment()}
       </div>
     );
