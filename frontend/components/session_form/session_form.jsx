@@ -20,12 +20,13 @@ class SessionForm extends React.Component {
   }
 
   demoLogin(e) {
+    let that = this;
     e.preventDefault();
     const demo = {username: 'demologin', password: 'demologin'};
     this.setState(demo);
     setTimeout(() => {
-      this.props.login(demo).then(() => {
-        this.props.history.push('/');
+      that.props.login(demo).then(() => {
+        that.props.history.push('/');
       });
     }, 1000);
   }
