@@ -23,5 +23,5 @@ export const fetchAllUsers = () => dispatch => (
 export const fetchUser = (id) => dispatch => {
   return UsersApiUtil.fetchUser(id).then(
     user=>dispatch(receiveUser(user))
-  )
+  );
 };
