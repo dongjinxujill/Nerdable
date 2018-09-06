@@ -11,7 +11,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.user_id);
+    this.props.fetchUser(this.props.userId);
     this.props.fetchAllProjects();
   }
 
