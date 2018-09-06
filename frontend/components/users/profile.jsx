@@ -11,7 +11,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.user.id);
+    this.props.fetchUser(this.props.user.author_id);
     this.props.fetchAllProjects();
   }
 
@@ -22,7 +22,7 @@ class Profile extends React.Component {
           <div className="profile-project-container">
             <Link to={`/projects/${project.id}`}><img className="profile-project-image" src={project.image} /></Link>
             <li className="profile-project-title">{project.title}</li>
-            <button className="profile-project-delete" onClick={this.handleDelete(project)}><i class="fas fa-trash"></i></button>
+            <button className="profile-project-delete" onClick={this.handleDelete(project)}><i className="fas fa-trash"></i></button>
           </div>
         );
       });

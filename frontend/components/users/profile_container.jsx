@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import {fetchUser} from '../../actions/users_actions';
+import {fetchUser, fetchAllUsers} from '../../actions/users_actions';
 import {fetchAllProjects, deleteProject} from '../../actions/projects_actions';
 
 const msp = (state, ownProps) => {
-  const user = state.session.currentUser;
+  const user = state.entities.users;
   let projects;
   if (state.entities.users[ownProps.match.params.userId]){
     if(state.entities.users[ownProps.match.params.userId].project_ids) {

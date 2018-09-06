@@ -29,7 +29,7 @@ class ProjectShow extends React.Component {
   // }
 
   renderUsername(project){
-    return <Link to={`/users/${project.author_id}`} >{this.props.authors[project.author_id].username}</Link>;
+    return <Link to={`/users/${this.props.authors.author_id}`}>{this.props.authors[project.author_id].username}</Link>;
   }
 
   renderCommentForm(project){
