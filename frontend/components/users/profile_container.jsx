@@ -25,7 +25,7 @@ const msp = (state, ownProps) => {
     projects = null;
   }
 
-  return {user, projects, currentUser: state.session.currentUser};
+  return {user, projects, currentUser: state.session.currentUser, user_id: ownProps.match.params.userId};
 };
 
 const mdp = dispatch => ({

@@ -63,7 +63,7 @@ class CommentsIndex extends React.Component {
             <article className="one-comment" key={idx-40} >
               <div className="comment-author-create" key={idx-100} >
                 <img key={idx+100}  className="comment-author-headshot" src={this.renderHeadshot(comment)}/>
-                <li key={idx+200}  className="comment-author">posted by: <Link to={`/users/${this.props.users[comment.author_id].id}`}>{this.getUsername(comment)}</Link></li>
+                <li key={idx+200}  className="comment-author">posted by: {this.getUsername(comment)}</li>
                 <li key={idx+1}  className="comment-create-at" value={comment.createAt}>at: {comment.createAt}</li>
               </div>
               <li key={idx-50} className="comment-body">{comment.body}</li>

@@ -11,7 +11,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.user.author_id);
+    this.props.fetchUser(this.props.user_id);
     this.props.fetchAllProjects();
   }
 
@@ -40,16 +40,16 @@ class Profile extends React.Component {
 
   render(){
     return (
-      <div>
-        <div className="profile-username-image">
-          <img className="profile-image" src={this.props.user.image_url}/>
-          <div className="profile-username-created-at">
-            <li className="profile-username">{this.props.user.username}</li>
-            <li className="profile-created-at">Joined &emsp; {this.props.user.createdAt}</li>
-          </div>
-        </div>
-        <div className="profile-projects">{this.showProjects()}</div>
-      </div>
+      // <div>
+        // <div className="profile-username-image">
+        //   <img className="profile-image" src={this.props.user.image_url}/>
+        //   <div className="profile-username-created-at">
+        //     <li className="profile-username">{this.props.user.username}</li>
+        //     <li className="profile-created-at">Joined &emsp; {this.props.user.createdAt}</li>
+        //   </div>
+        // </div>
+      <div className="profile-projects">{this.showProjects()}</div>
+      // </div>
     );
   }
 

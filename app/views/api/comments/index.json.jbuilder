@@ -4,6 +4,10 @@
       json.partial! 'api/comments/comment', comment: comment
     end
   end
+  # json.users do
+  #   json.id comment.user.id
+  #   json.username comment.user.username
+  # end
 end
 
 json.users do
